@@ -32,13 +32,14 @@ contract CrowdsaleExchangeToken is Crowdsale{
       /* uint256 tokenAmount = 50; */
       _processPurchase(_beneficiary, tokenAmount); // token Amount will send to _beneficiary address
 
-      token.transferFrom(_beneficiary, address(token), _amount); 
+      /* token.transferFrom(_beneficiary, address(token), _amount);
+      token.transferFrom(_beneficiary, address(this), _amount); */
 
       emit TokenExchange (
         msg.sender,
         _beneficiary,
-        //uint256 raxRaised;
        _amount
         );
+      wallet.transfer(_amount);
       }
     }
