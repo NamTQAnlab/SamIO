@@ -1,0 +1,470 @@
+{
+  "contractName": "ClaimableEx",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "claimOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "pendingOwner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipRenounced",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "cancelOwnershipTransfer",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405260008054600160a060020a031916331790556102f0806100256000396000f3006080604052600436106100775763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166323452b9c811461007c5780634e71e0c814610093578063715018a6146100a85780638da5cb5b146100bd578063e30c3978146100ee578063f2fde38b14610103575b600080fd5b34801561008857600080fd5b50610091610124565b005b34801561009f57600080fd5b5061009161016c565b3480156100b457600080fd5b506100916101f4565b3480156100c957600080fd5b506100d2610260565b60408051600160a060020a039092168252519081900360200190f35b3480156100fa57600080fd5b506100d261026f565b34801561010f57600080fd5b50610091600160a060020a036004351661027e565b600054600160a060020a0316331461013b57600080fd5b6000546001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03909216919091179055565b600154600160a060020a0316331461018357600080fd5b60015460008054604051600160a060020a0393841693909116917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600180546000805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600054600160a060020a0316331461020b57600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600054600160a060020a031681565b600154600160a060020a031681565b600054600160a060020a0316331461029557600080fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820024182c3df12ae7aab48eff019274ab6fee690edfdd7faf9565adbda1f6fb9340029",
+  "deployedBytecode": "0x6080604052600436106100775763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166323452b9c811461007c5780634e71e0c814610093578063715018a6146100a85780638da5cb5b146100bd578063e30c3978146100ee578063f2fde38b14610103575b600080fd5b34801561008857600080fd5b50610091610124565b005b34801561009f57600080fd5b5061009161016c565b3480156100b457600080fd5b506100916101f4565b3480156100c957600080fd5b506100d2610260565b60408051600160a060020a039092168252519081900360200190f35b3480156100fa57600080fd5b506100d261026f565b34801561010f57600080fd5b50610091600160a060020a036004351661027e565b600054600160a060020a0316331461013b57600080fd5b6000546001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03909216919091179055565b600154600160a060020a0316331461018357600080fd5b60015460008054604051600160a060020a0393841693909116917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600180546000805473ffffffffffffffffffffffffffffffffffffffff19908116600160a060020a03841617909155169055565b600054600160a060020a0316331461020b57600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600054600160a060020a031681565b600154600160a060020a031681565b600054600160a060020a0316331461029557600080fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820024182c3df12ae7aab48eff019274ab6fee690edfdd7faf9565adbda1f6fb9340029",
+  "sourceMap": "207:176:17:-;;;567:5:35;:18;;-1:-1:-1;;;;;;567:18:35;575:10;567:18;;;207:176:17;;;;;;",
+  "deployedSourceMap": "207:176:17:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;298:83;;8:9:-1;5:2;;;30:1;27;20:12;5:2;298:83:17;;;;;;781:164:29;;8:9:-1;5:2;;;30:1;27;20:12;5:2;781:164:29;;;;1001:111:35;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1001:111:35;;;;238:20;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:35;;;;;;;;-1:-1:-1;;;;;238:20:35;;;;;;;;;;;;;;253:27:29;;8:9:-1;5:2;;;30:1;27;20:12;5:2;253:27:29;;;;601:96;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;601:96:29;-1:-1:-1;;;;;601:96:29;;;;;298:83:17;719:5:35;;-1:-1:-1;;;;;719:5:35;705:10;:19;697:28;;;;;;371:5:17;;;356:20;;-1:-1:-1;;356:20:17;-1:-1:-1;;;;;371:5:17;;;356:20;;;;;;298:83::o;781:164:29:-;433:12;;-1:-1:-1;;;;;433:12:29;419:10;:26;411:35;;;;;;870:12;;;863:5;;842:41;;-1:-1:-1;;;;;870:12:29;;;;863:5;;;;842:41;;;897:12;;;;889:20;;-1:-1:-1;;889:20:29;;;-1:-1:-1;;;;;897:12:29;;889:20;;;;915:25;;;781:164::o;1001:111:35:-;719:5;;-1:-1:-1;;;;;719:5:35;705:10;:19;697:28;;;;;;1077:5;;;1058:25;;-1:-1:-1;;;;;1077:5:35;;;;1058:25;;;1105:1;1089:18;;-1:-1:-1;;1089:18:35;;;1001:111::o;238:20::-;;;-1:-1:-1;;;;;238:20:35;;:::o;253:27:29:-;;;-1:-1:-1;;;;;253:27:29;;:::o;601:96::-;719:5:35;;-1:-1:-1;;;;;719:5:35;705:10;:19;697:28;;;;;;669:12:29;:23;;-1:-1:-1;;669:23:29;-1:-1:-1;;;;;669:23:29;;;;;;;;;;601:96::o",
+  "source": "pragma solidity ^0.4.24;\n\nimport \"../zeppelin/contracts/ownership/Claimable.sol\";\n\n\n/**\n * @title Claimable Ex\n * @dev Extension for the Claimable contract, where the ownership transfer can be canceled.\n */\ncontract ClaimableEx is Claimable {\n  /*\n   * @dev Cancels the ownership transfer.\n   */\n  function cancelOwnershipTransfer() onlyOwner public {\n    pendingOwner = owner;\n  }\n}\n",
+  "sourcePath": "/home/namtq/Anlab/SamuraiX/contracts/ownership/ClaimableEx.sol",
+  "ast": {
+    "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/ownership/ClaimableEx.sol",
+    "exportedSymbols": {
+      "ClaimableEx": [
+        2519
+      ]
+    },
+    "id": 2520,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2505,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:17"
+      },
+      {
+        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/zeppelin/contracts/ownership/Claimable.sol",
+        "file": "../zeppelin/contracts/ownership/Claimable.sol",
+        "id": 2506,
+        "nodeType": "ImportDirective",
+        "scope": 2520,
+        "sourceUnit": 3326,
+        "src": "26:55:17",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2507,
+              "name": "Claimable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3325,
+              "src": "231:9:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Claimable_$3325",
+                "typeString": "contract Claimable"
+              }
+            },
+            "id": 2508,
+            "nodeType": "InheritanceSpecifier",
+            "src": "231:9:17"
+          }
+        ],
+        "contractDependencies": [
+          3325,
+          3530
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Claimable Ex\n@dev Extension for the Claimable contract, where the ownership transfer can be canceled.",
+        "fullyImplemented": true,
+        "id": 2519,
+        "linearizedBaseContracts": [
+          2519,
+          3325,
+          3530
+        ],
+        "name": "ClaimableEx",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 2517,
+              "nodeType": "Block",
+              "src": "350:31:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2515,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2513,
+                      "name": "pendingOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3280,
+                      "src": "356:12:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 2514,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3448,
+                      "src": "371:5:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "356:20:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 2516,
+                  "nodeType": "ExpressionStatement",
+                  "src": "356:20:17"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2518,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 2511,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2510,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 3478,
+                  "src": "333:9:17",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "333:9:17"
+              }
+            ],
+            "name": "cancelOwnershipTransfer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2509,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "330:2:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2512,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "350:0:17"
+            },
+            "scope": 2519,
+            "src": "298:83:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2520,
+        "src": "207:176:17"
+      }
+    ],
+    "src": "0:384:17"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/ownership/ClaimableEx.sol",
+    "exportedSymbols": {
+      "ClaimableEx": [
+        2519
+      ]
+    },
+    "id": 2520,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2505,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:17"
+      },
+      {
+        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/zeppelin/contracts/ownership/Claimable.sol",
+        "file": "../zeppelin/contracts/ownership/Claimable.sol",
+        "id": 2506,
+        "nodeType": "ImportDirective",
+        "scope": 2520,
+        "sourceUnit": 3326,
+        "src": "26:55:17",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2507,
+              "name": "Claimable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3325,
+              "src": "231:9:17",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Claimable_$3325",
+                "typeString": "contract Claimable"
+              }
+            },
+            "id": 2508,
+            "nodeType": "InheritanceSpecifier",
+            "src": "231:9:17"
+          }
+        ],
+        "contractDependencies": [
+          3325,
+          3530
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Claimable Ex\n@dev Extension for the Claimable contract, where the ownership transfer can be canceled.",
+        "fullyImplemented": true,
+        "id": 2519,
+        "linearizedBaseContracts": [
+          2519,
+          3325,
+          3530
+        ],
+        "name": "ClaimableEx",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 2517,
+              "nodeType": "Block",
+              "src": "350:31:17",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2515,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2513,
+                      "name": "pendingOwner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3280,
+                      "src": "356:12:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 2514,
+                      "name": "owner",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 3448,
+                      "src": "371:5:17",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "356:20:17",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 2516,
+                  "nodeType": "ExpressionStatement",
+                  "src": "356:20:17"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2518,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 2511,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2510,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 3478,
+                  "src": "333:9:17",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "333:9:17"
+              }
+            ],
+            "name": "cancelOwnershipTransfer",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2509,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "330:2:17"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2512,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "350:0:17"
+            },
+            "scope": 2519,
+            "src": "298:83:17",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2520,
+        "src": "207:176:17"
+      }
+    ],
+    "src": "0:384:17"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-09-28T03:23:17.528Z"
+}

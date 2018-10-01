@@ -1,0 +1,1113 @@
+{
+  "contractName": "Manageable",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "registry",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_registry",
+          "type": "address"
+        }
+      ],
+      "name": "setRegistry",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "registry",
+          "type": "address"
+        }
+      ],
+      "name": "SetRegistry",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipRenounced",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_operator",
+          "type": "address"
+        }
+      ],
+      "name": "isManager",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405260008054600160a060020a031916331790556103bc806100256000396000f3006080604052600436106100775763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663715018a6811461007c5780637b103999146100935780638da5cb5b146100c4578063a91ee0dc146100d9578063f2fde38b146100fa578063f3ae24151461011b575b600080fd5b34801561008857600080fd5b50610091610150565b005b34801561009f57600080fd5b506100a86101bc565b60408051600160a060020a039092168252519081900360200190f35b3480156100d057600080fd5b506100a86101cb565b3480156100e557600080fd5b50610091600160a060020a03600435166101da565b34801561010657600080fd5b50610091600160a060020a036004351661024e565b34801561012757600080fd5b5061013c600160a060020a0360043516610271565b604080519115158252519081900360200190f35b600054600160a060020a0316331461016757600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600154600160a060020a031681565b600054600160a060020a031681565b600054600160a060020a031633146101f157600080fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0383811691909117918290556040519116907f278c70ced5f3e0e5eeb385b5ff9cb735748ba00a625147e66065ed48fc1562cd90600090a250565b600054600160a060020a0316331461026557600080fd5b61026e81610313565b50565b600154604080517f1ca451a3000000000000000000000000000000000000000000000000000000008152600160a060020a038481166004830152600060248301819052925192931691631ca451a39160448082019260209290919082900301818787803b1580156102e157600080fd5b505af11580156102f5573d6000803e3d6000fd5b505050506040513d602081101561030b57600080fd5b505192915050565b600160a060020a038116151561032857600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820cafbe84e81221fb57b2e6a7fde31d3bc2524f902967ca38983057c760973d1740029",
+  "deployedBytecode": "0x6080604052600436106100775763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663715018a6811461007c5780637b103999146100935780638da5cb5b146100c4578063a91ee0dc146100d9578063f2fde38b146100fa578063f3ae24151461011b575b600080fd5b34801561008857600080fd5b50610091610150565b005b34801561009f57600080fd5b506100a86101bc565b60408051600160a060020a039092168252519081900360200190f35b3480156100d057600080fd5b506100a86101cb565b3480156100e557600080fd5b50610091600160a060020a03600435166101da565b34801561010657600080fd5b50610091600160a060020a036004351661024e565b34801561012757600080fd5b5061013c600160a060020a0360043516610271565b604080519115158252519081900360200190f35b600054600160a060020a0316331461016757600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600154600160a060020a031681565b600054600160a060020a031681565b600054600160a060020a031633146101f157600080fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0383811691909117918290556040519116907f278c70ced5f3e0e5eeb385b5ff9cb735748ba00a625147e66065ed48fc1562cd90600090a250565b600054600160a060020a0316331461026557600080fd5b61026e81610313565b50565b600154604080517f1ca451a3000000000000000000000000000000000000000000000000000000008152600160a060020a038481166004830152600060248301819052925192931691631ca451a39160448082019260209290919082900301818787803b1580156102e157600080fd5b505af11580156102f5573d6000803e3d6000fd5b505050506040513d602081101561030b57600080fd5b505192915050565b600160a060020a038116151561032857600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a72305820cafbe84e81221fb57b2e6a7fde31d3bc2524f902967ca38983057c760973d1740029",
+  "sourceMap": "252:527:7:-;;;567:5:35;:18;;-1:-1:-1;;;;;;567:18:35;575:10;567:18;;;252:527:7;;;;;;",
+  "deployedSourceMap": "252:527:7:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1001:111:35;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1001:111:35;;;;;;170:24:21;;8:9:-1;5:2;;;30:1;27;20:12;5:2;170:24:21;;;;;;;;-1:-1:-1;;;;;170:24:21;;;;;;;;;;;;;;238:20:35;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:35;;;;247:121:21;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;247:121:21;-1:-1:-1;;;;;247:121:21;;;;;1274:103:35;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1274:103:35;-1:-1:-1;;;;;1274:103:35;;;;;606:171:7;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;606:171:7;-1:-1:-1;;;;;606:171:7;;;;;;;;;;;;;;;;;;;;;;;1001:111:35;719:5;;-1:-1:-1;;;;;719:5:35;705:10;:19;697:28;;;;;;1077:5;;;1058:25;;-1:-1:-1;;;;;1077:5:35;;;;1058:25;;;1105:1;1089:18;;-1:-1:-1;;1089:18:35;;;1001:111::o;170:24:21:-;;;-1:-1:-1;;;;;170:24:21;;:::o;238:20:35:-;;;-1:-1:-1;;;;;238:20:35;;:::o;247:121:21:-;719:5:35;;-1:-1:-1;;;;;719:5:35;705:10;:19;697:28;;;;;;311:8:21;:20;;-1:-1:-1;;311:20:21;-1:-1:-1;;;;;311:20:21;;;;;;;;;;;342:21;;354:8;;;342:21;;-1:-1:-1;;342:21:21;247:121;:::o;1274:103:35:-;719:5;;-1:-1:-1;;;;;719:5:35;705:10;:19;697:28;;;;;;1343:29;1362:9;1343:18;:29::i;:::-;1274:103;:::o;606:171:7:-;684:8;;:88;;;;;;-1:-1:-1;;;;;684:88:7;;;;;;;-1:-1:-1;684:88:7;;;;;;;;-1:-1:-1;;684:8:7;;:21;;:88;;;;;;;;;;;;;;;-1:-1:-1;684:8:7;:88;;;5:2:-1;;;;30:1;27;20:12;5:2;684:88:7;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;684:88:7;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;684:88:7;;606:171;-1:-1:-1;;606:171:7:o;1512::35:-;-1:-1:-1;;;;;1582:23:35;;;;1574:32;;;;;;1638:5;;;1617:38;;-1:-1:-1;;;;;1617:38:35;;;;1638:5;;;1617:38;;;1661:5;:17;;-1:-1:-1;;1661:17:35;-1:-1:-1;;;;;1661:17:35;;;;;;;;;;1512:171::o",
+  "source": "pragma solidity ^0.4.24;\n\nimport \"../registry/HasRegistry.sol\";\n\n\n/**\n * @title Manageable\n * @dev The Manageable contract provides basic authorization control functions\n * for managers. This simplifies the implementation of \"manager permissions\".\n */\ncontract Manageable is HasRegistry {\n  /**\n   * @dev Throws if called by any account that is not in the managers list.\n   */\n  modifier onlyManager() {\n    require(\n      registry.hasAttribute(\n        msg.sender,\n        Attribute.AttributeType.ROLE_MANAGER\n      )\n    );\n    _;\n  }\n\n  /**\n   * @dev Getter to determine if address is a manager\n   */\n  function isManager(address _operator) public view returns (bool) {\n    return registry.hasAttribute(\n      _operator,\n      Attribute.AttributeType.ROLE_MANAGER\n    );\n  }\n}\n",
+  "sourcePath": "/home/namtq/Anlab/SamuraiX/contracts/access/Manageable.sol",
+  "ast": {
+    "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/access/Manageable.sol",
+    "exportedSymbols": {
+      "Manageable": [
+        859
+      ]
+    },
+    "id": 860,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 824,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:7"
+      },
+      {
+        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/HasRegistry.sol",
+        "file": "../registry/HasRegistry.sol",
+        "id": 825,
+        "nodeType": "ImportDirective",
+        "scope": 860,
+        "sourceUnit": 2691,
+        "src": "26:37:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 826,
+              "name": "HasRegistry",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2690,
+              "src": "275:11:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_HasRegistry_$2690",
+                "typeString": "contract HasRegistry"
+              }
+            },
+            "id": 827,
+            "nodeType": "InheritanceSpecifier",
+            "src": "275:11:7"
+          }
+        ],
+        "contractDependencies": [
+          2690,
+          3530
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Manageable\n@dev The Manageable contract provides basic authorization control functions\nfor managers. This simplifies the implementation of \"manager permissions\".",
+        "fullyImplemented": true,
+        "id": 859,
+        "linearizedBaseContracts": [
+          859,
+          2690,
+          3530
+        ],
+        "name": "Manageable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 841,
+              "nodeType": "Block",
+              "src": "402:134:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 832,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3682,
+                              "src": "454:3:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 833,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "454:10:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 834,
+                                "name": "Attribute",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 2588,
+                                "src": "474:9:7",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_contract$_Attribute_$2588_$",
+                                  "typeString": "type(library Attribute)"
+                                }
+                              },
+                              "id": 835,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "AttributeType",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 2575,
+                              "src": "474:23:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_AttributeType_$2575_$",
+                                "typeString": "type(enum Attribute.AttributeType)"
+                              }
+                            },
+                            "id": 836,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "ROLE_MANAGER",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "474:36:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_AttributeType_$2575",
+                              "typeString": "enum Attribute.AttributeType"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_enum$_AttributeType_$2575",
+                              "typeString": "enum Attribute.AttributeType"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 830,
+                            "name": "registry",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2669,
+                            "src": "423:8:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Registry_$2903",
+                              "typeString": "contract Registry"
+                            }
+                          },
+                          "id": 831,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "hasAttribute",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 2868,
+                          "src": "423:21:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$_t_enum$_AttributeType_$2575_$returns$_t_bool_$",
+                            "typeString": "function (address,enum Attribute.AttributeType) view external returns (bool)"
+                          }
+                        },
+                        "id": 837,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "423:95:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 829,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3685,
+                        3686
+                      ],
+                      "referencedDeclaration": 3685,
+                      "src": "408:7:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 838,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "408:116:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 839,
+                  "nodeType": "ExpressionStatement",
+                  "src": "408:116:7"
+                },
+                {
+                  "id": 840,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "530:1:7"
+                }
+              ]
+            },
+            "documentation": "@dev Throws if called by any account that is not in the managers list.",
+            "id": 842,
+            "name": "onlyManager",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 828,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "399:2:7"
+            },
+            "src": "379:157:7",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 857,
+              "nodeType": "Block",
+              "src": "671:106:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 851,
+                        "name": "_operator",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 844,
+                        "src": "713:9:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 852,
+                            "name": "Attribute",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2588,
+                            "src": "730:9:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_Attribute_$2588_$",
+                              "typeString": "type(library Attribute)"
+                            }
+                          },
+                          "id": 853,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "AttributeType",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 2575,
+                          "src": "730:23:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_AttributeType_$2575_$",
+                            "typeString": "type(enum Attribute.AttributeType)"
+                          }
+                        },
+                        "id": 854,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "ROLE_MANAGER",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "730:36:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_AttributeType_$2575",
+                          "typeString": "enum Attribute.AttributeType"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_AttributeType_$2575",
+                          "typeString": "enum Attribute.AttributeType"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 849,
+                        "name": "registry",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2669,
+                        "src": "684:8:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Registry_$2903",
+                          "typeString": "contract Registry"
+                        }
+                      },
+                      "id": 850,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "hasAttribute",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2868,
+                      "src": "684:21:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_address_$_t_enum$_AttributeType_$2575_$returns$_t_bool_$",
+                        "typeString": "function (address,enum Attribute.AttributeType) view external returns (bool)"
+                      }
+                    },
+                    "id": 855,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "684:88:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 848,
+                  "id": 856,
+                  "nodeType": "Return",
+                  "src": "677:95:7"
+                }
+              ]
+            },
+            "documentation": "@dev Getter to determine if address is a manager",
+            "id": 858,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isManager",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 845,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 844,
+                  "name": "_operator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 858,
+                  "src": "625:17:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 843,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "625:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "624:19:7"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 848,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 847,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 858,
+                  "src": "665:4:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 846,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "665:4:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "664:6:7"
+            },
+            "scope": 859,
+            "src": "606:171:7",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 860,
+        "src": "252:527:7"
+      }
+    ],
+    "src": "0:780:7"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/access/Manageable.sol",
+    "exportedSymbols": {
+      "Manageable": [
+        859
+      ]
+    },
+    "id": 860,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 824,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:7"
+      },
+      {
+        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/HasRegistry.sol",
+        "file": "../registry/HasRegistry.sol",
+        "id": 825,
+        "nodeType": "ImportDirective",
+        "scope": 860,
+        "sourceUnit": 2691,
+        "src": "26:37:7",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 826,
+              "name": "HasRegistry",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2690,
+              "src": "275:11:7",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_HasRegistry_$2690",
+                "typeString": "contract HasRegistry"
+              }
+            },
+            "id": 827,
+            "nodeType": "InheritanceSpecifier",
+            "src": "275:11:7"
+          }
+        ],
+        "contractDependencies": [
+          2690,
+          3530
+        ],
+        "contractKind": "contract",
+        "documentation": "@title Manageable\n@dev The Manageable contract provides basic authorization control functions\nfor managers. This simplifies the implementation of \"manager permissions\".",
+        "fullyImplemented": true,
+        "id": 859,
+        "linearizedBaseContracts": [
+          859,
+          2690,
+          3530
+        ],
+        "name": "Manageable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 841,
+              "nodeType": "Block",
+              "src": "402:134:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 832,
+                              "name": "msg",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 3682,
+                              "src": "454:3:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_magic_message",
+                                "typeString": "msg"
+                              }
+                            },
+                            "id": 833,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "sender",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "454:10:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 834,
+                                "name": "Attribute",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 2588,
+                                "src": "474:9:7",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_contract$_Attribute_$2588_$",
+                                  "typeString": "type(library Attribute)"
+                                }
+                              },
+                              "id": 835,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "AttributeType",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 2575,
+                              "src": "474:23:7",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_AttributeType_$2575_$",
+                                "typeString": "type(enum Attribute.AttributeType)"
+                              }
+                            },
+                            "id": 836,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "ROLE_MANAGER",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "474:36:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_AttributeType_$2575",
+                              "typeString": "enum Attribute.AttributeType"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_enum$_AttributeType_$2575",
+                              "typeString": "enum Attribute.AttributeType"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 830,
+                            "name": "registry",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2669,
+                            "src": "423:8:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Registry_$2903",
+                              "typeString": "contract Registry"
+                            }
+                          },
+                          "id": 831,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "hasAttribute",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 2868,
+                          "src": "423:21:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$_t_enum$_AttributeType_$2575_$returns$_t_bool_$",
+                            "typeString": "function (address,enum Attribute.AttributeType) view external returns (bool)"
+                          }
+                        },
+                        "id": 837,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "423:95:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 829,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3685,
+                        3686
+                      ],
+                      "referencedDeclaration": 3685,
+                      "src": "408:7:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
+                        "typeString": "function (bool) pure"
+                      }
+                    },
+                    "id": 838,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "408:116:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 839,
+                  "nodeType": "ExpressionStatement",
+                  "src": "408:116:7"
+                },
+                {
+                  "id": 840,
+                  "nodeType": "PlaceholderStatement",
+                  "src": "530:1:7"
+                }
+              ]
+            },
+            "documentation": "@dev Throws if called by any account that is not in the managers list.",
+            "id": 842,
+            "name": "onlyManager",
+            "nodeType": "ModifierDefinition",
+            "parameters": {
+              "id": 828,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "399:2:7"
+            },
+            "src": "379:157:7",
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 857,
+              "nodeType": "Block",
+              "src": "671:106:7",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 851,
+                        "name": "_operator",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 844,
+                        "src": "713:9:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 852,
+                            "name": "Attribute",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2588,
+                            "src": "730:9:7",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_Attribute_$2588_$",
+                              "typeString": "type(library Attribute)"
+                            }
+                          },
+                          "id": 853,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "AttributeType",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 2575,
+                          "src": "730:23:7",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_enum$_AttributeType_$2575_$",
+                            "typeString": "type(enum Attribute.AttributeType)"
+                          }
+                        },
+                        "id": 854,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "memberName": "ROLE_MANAGER",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "730:36:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_AttributeType_$2575",
+                          "typeString": "enum Attribute.AttributeType"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_AttributeType_$2575",
+                          "typeString": "enum Attribute.AttributeType"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 849,
+                        "name": "registry",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2669,
+                        "src": "684:8:7",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Registry_$2903",
+                          "typeString": "contract Registry"
+                        }
+                      },
+                      "id": 850,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "hasAttribute",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 2868,
+                      "src": "684:21:7",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_view$_t_address_$_t_enum$_AttributeType_$2575_$returns$_t_bool_$",
+                        "typeString": "function (address,enum Attribute.AttributeType) view external returns (bool)"
+                      }
+                    },
+                    "id": 855,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "684:88:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "functionReturnParameters": 848,
+                  "id": 856,
+                  "nodeType": "Return",
+                  "src": "677:95:7"
+                }
+              ]
+            },
+            "documentation": "@dev Getter to determine if address is a manager",
+            "id": 858,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "isManager",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 845,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 844,
+                  "name": "_operator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 858,
+                  "src": "625:17:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 843,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "625:7:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "624:19:7"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 848,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 847,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 858,
+                  "src": "665:4:7",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 846,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "665:4:7",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "664:6:7"
+            },
+            "scope": 859,
+            "src": "606:171:7",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 860,
+        "src": "252:527:7"
+      }
+    ],
+    "src": "0:780:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-09-28T03:23:17.513Z"
+}

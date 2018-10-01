@@ -1,0 +1,528 @@
+{
+  "contractName": "Attribute",
+  "abi": [],
+  "bytecode": "0x604c602c600b82828239805160001a60731460008114601c57601e565bfe5b5030600052607381538281f30073000000000000000000000000000000000000000030146080604052600080fd00a165627a7a7230582082e32c90bfaa7c22f9e146405014c40ee6f5aa3f231913dbf53df2d74e3958920029",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fd00a165627a7a7230582082e32c90bfaa7c22f9e146405014c40ee6f5aa3f231913dbf53df2d74e3958920029",
+  "sourceMap": "26:418:19:-;;132:2:-1;166:7;155:9;146:7;137:37;252:7;246:14;243:1;238:23;232:4;229:33;270:1;265:20;;;;222:63;;265:20;274:9;222:63;;298:9;295:1;288:20;328:4;319:7;311:22;352:7;343;336:24",
+  "deployedSourceMap": "26:418:19:-;;;;;;;;",
+  "source": "pragma solidity ^0.4.24;\n\nlibrary Attribute {\n  enum AttributeType {\n    ROLE_MANAGER,                   // 0\n    ROLE_OPERATOR,                  // 1\n    IS_BLACKLISTED,                 // 2\n    HAS_PASSED_KYC_AML,             // 3\n    NO_FEES,                        // 4\n    /* Additional user-defined later */\n    USER_DEFINED\n  }\n\n  function toUint256(AttributeType _type) internal pure returns (uint256) {\n    return uint256(_type);\n  }\n}\n",
+  "sourcePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/Attribute.sol",
+  "ast": {
+    "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/Attribute.sol",
+    "exportedSymbols": {
+      "Attribute": [
+        2588
+      ]
+    },
+    "id": 2589,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2568,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:19"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2588,
+        "linearizedBaseContracts": [
+          2588
+        ],
+        "name": "Attribute",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Attribute.AttributeType",
+            "id": 2575,
+            "members": [
+              {
+                "id": 2569,
+                "name": "ROLE_MANAGER",
+                "nodeType": "EnumValue",
+                "src": "73:12:19"
+              },
+              {
+                "id": 2570,
+                "name": "ROLE_OPERATOR",
+                "nodeType": "EnumValue",
+                "src": "114:13:19"
+              },
+              {
+                "id": 2571,
+                "name": "IS_BLACKLISTED",
+                "nodeType": "EnumValue",
+                "src": "155:14:19"
+              },
+              {
+                "id": 2572,
+                "name": "HAS_PASSED_KYC_AML",
+                "nodeType": "EnumValue",
+                "src": "196:18:19"
+              },
+              {
+                "id": 2573,
+                "name": "NO_FEES",
+                "nodeType": "EnumValue",
+                "src": "237:7:19"
+              },
+              {
+                "id": 2574,
+                "name": "USER_DEFINED",
+                "nodeType": "EnumValue",
+                "src": "318:12:19"
+              }
+            ],
+            "name": "AttributeType",
+            "nodeType": "EnumDefinition",
+            "src": "48:286:19"
+          },
+          {
+            "body": {
+              "id": 2586,
+              "nodeType": "Block",
+              "src": "410:32:19",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2583,
+                        "name": "_type",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2577,
+                        "src": "431:5:19",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_AttributeType_$2575",
+                          "typeString": "enum Attribute.AttributeType"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_AttributeType_$2575",
+                          "typeString": "enum Attribute.AttributeType"
+                        }
+                      ],
+                      "id": 2582,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "423:7:19",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_uint256_$",
+                        "typeString": "type(uint256)"
+                      },
+                      "typeName": "uint256"
+                    },
+                    "id": 2584,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "423:14:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 2581,
+                  "id": 2585,
+                  "nodeType": "Return",
+                  "src": "416:21:19"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2587,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "toUint256",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2578,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2577,
+                  "name": "_type",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2587,
+                  "src": "357:19:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_AttributeType_$2575",
+                    "typeString": "enum Attribute.AttributeType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2576,
+                    "name": "AttributeType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2575,
+                    "src": "357:13:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_AttributeType_$2575",
+                      "typeString": "enum Attribute.AttributeType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "356:21:19"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2581,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2580,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2587,
+                  "src": "401:7:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2579,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "401:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "400:9:19"
+            },
+            "scope": 2588,
+            "src": "338:104:19",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 2589,
+        "src": "26:418:19"
+      }
+    ],
+    "src": "0:445:19"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/Attribute.sol",
+    "exportedSymbols": {
+      "Attribute": [
+        2588
+      ]
+    },
+    "id": 2589,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2568,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:19"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2588,
+        "linearizedBaseContracts": [
+          2588
+        ],
+        "name": "Attribute",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Attribute.AttributeType",
+            "id": 2575,
+            "members": [
+              {
+                "id": 2569,
+                "name": "ROLE_MANAGER",
+                "nodeType": "EnumValue",
+                "src": "73:12:19"
+              },
+              {
+                "id": 2570,
+                "name": "ROLE_OPERATOR",
+                "nodeType": "EnumValue",
+                "src": "114:13:19"
+              },
+              {
+                "id": 2571,
+                "name": "IS_BLACKLISTED",
+                "nodeType": "EnumValue",
+                "src": "155:14:19"
+              },
+              {
+                "id": 2572,
+                "name": "HAS_PASSED_KYC_AML",
+                "nodeType": "EnumValue",
+                "src": "196:18:19"
+              },
+              {
+                "id": 2573,
+                "name": "NO_FEES",
+                "nodeType": "EnumValue",
+                "src": "237:7:19"
+              },
+              {
+                "id": 2574,
+                "name": "USER_DEFINED",
+                "nodeType": "EnumValue",
+                "src": "318:12:19"
+              }
+            ],
+            "name": "AttributeType",
+            "nodeType": "EnumDefinition",
+            "src": "48:286:19"
+          },
+          {
+            "body": {
+              "id": 2586,
+              "nodeType": "Block",
+              "src": "410:32:19",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2583,
+                        "name": "_type",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2577,
+                        "src": "431:5:19",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_AttributeType_$2575",
+                          "typeString": "enum Attribute.AttributeType"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_enum$_AttributeType_$2575",
+                          "typeString": "enum Attribute.AttributeType"
+                        }
+                      ],
+                      "id": 2582,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "423:7:19",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_uint256_$",
+                        "typeString": "type(uint256)"
+                      },
+                      "typeName": "uint256"
+                    },
+                    "id": 2584,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "423:14:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 2581,
+                  "id": 2585,
+                  "nodeType": "Return",
+                  "src": "416:21:19"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2587,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "toUint256",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2578,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2577,
+                  "name": "_type",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2587,
+                  "src": "357:19:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_AttributeType_$2575",
+                    "typeString": "enum Attribute.AttributeType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2576,
+                    "name": "AttributeType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2575,
+                    "src": "357:13:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_AttributeType_$2575",
+                      "typeString": "enum Attribute.AttributeType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "356:21:19"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2581,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2580,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2587,
+                  "src": "401:7:19",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2579,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "401:7:19",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "400:9:19"
+            },
+            "scope": 2588,
+            "src": "338:104:19",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 2589,
+        "src": "26:418:19"
+      }
+    ],
+    "src": "0:445:19"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {
+    "1538042364316": {
+      "events": {},
+      "links": {},
+      "address": "0xae5820014832a4fa5cccb5de9449334b18c2b0a7",
+      "transactionHash": "0x3c6166759fa56453d07f90436ccecddb815c5e0c1dc73c4b8c9a840e9708fc92"
+    },
+    "1538043925806": {
+      "events": {},
+      "links": {},
+      "address": "0xe000aaf34da5d83795094a16dee9d8bbd7bdd953",
+      "transactionHash": "0x3c6166759fa56453d07f90436ccecddb815c5e0c1dc73c4b8c9a840e9708fc92"
+    },
+    "1538099724991": {
+      "events": {},
+      "links": {},
+      "address": "0xf833d2ffadf0a3087c3be22d6014c03e64755eb6",
+      "transactionHash": "0x3c6166759fa56453d07f90436ccecddb815c5e0c1dc73c4b8c9a840e9708fc92"
+    },
+    "1538105020286": {
+      "events": {},
+      "links": {},
+      "address": "0x8c0f689f6b621488fa719a56c8f0c6a86e3c73cc",
+      "transactionHash": "0x62420f033f2d01d93ebf7b487cf5ff9f2b51937ac3e37d0e814b5c34053aeb2e"
+    },
+    "1538110723911": {
+      "events": {},
+      "links": {},
+      "address": "0xfd863cb24bc665ad9e594925452092aa9f9156e7",
+      "transactionHash": "0x3c6166759fa56453d07f90436ccecddb815c5e0c1dc73c4b8c9a840e9708fc92"
+    },
+    "1538123085680": {
+      "events": {},
+      "links": {},
+      "address": "0xfd95aed74927df376485192de77400fff27d0866",
+      "transactionHash": "0x62420f033f2d01d93ebf7b487cf5ff9f2b51937ac3e37d0e814b5c34053aeb2e"
+    },
+    "1538358210636": {
+      "events": {},
+      "links": {},
+      "address": "0xfc35671060edafebbbc688d814c06552d379752f",
+      "transactionHash": "0x3c6166759fa56453d07f90436ccecddb815c5e0c1dc73c4b8c9a840e9708fc92"
+    }
+  },
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-10-01T01:43:44.756Z"
+}

@@ -1,0 +1,780 @@
+{
+  "contractName": "HasRegistry",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "registry",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "registry",
+          "type": "address"
+        }
+      ],
+      "name": "SetRegistry",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipRenounced",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_registry",
+          "type": "address"
+        }
+      ],
+      "name": "setRegistry",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405260008054600160a060020a031916331790556102da806100256000396000f30060806040526004361061006c5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663715018a681146100715780637b103999146100885780638da5cb5b146100b9578063a91ee0dc146100ce578063f2fde38b146100ef575b600080fd5b34801561007d57600080fd5b50610086610110565b005b34801561009457600080fd5b5061009d61017c565b60408051600160a060020a039092168252519081900360200190f35b3480156100c557600080fd5b5061009d61018b565b3480156100da57600080fd5b50610086600160a060020a036004351661019a565b3480156100fb57600080fd5b50610086600160a060020a036004351661020e565b600054600160a060020a0316331461012757600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600154600160a060020a031681565b600054600160a060020a031681565b600054600160a060020a031633146101b157600080fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0383811691909117918290556040519116907f278c70ced5f3e0e5eeb385b5ff9cb735748ba00a625147e66065ed48fc1562cd90600090a250565b600054600160a060020a0316331461022557600080fd5b61022e81610231565b50565b600160a060020a038116151561024657600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a723058203517d74fe3e4e372423d25e15f03ada6dae0e16ac13d9b593802315a029473d30029",
+  "deployedBytecode": "0x60806040526004361061006c5763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663715018a681146100715780637b103999146100885780638da5cb5b146100b9578063a91ee0dc146100ce578063f2fde38b146100ef575b600080fd5b34801561007d57600080fd5b50610086610110565b005b34801561009457600080fd5b5061009d61017c565b60408051600160a060020a039092168252519081900360200190f35b3480156100c557600080fd5b5061009d61018b565b3480156100da57600080fd5b50610086600160a060020a036004351661019a565b3480156100fb57600080fd5b50610086600160a060020a036004351661020e565b600054600160a060020a0316331461012757600080fd5b60008054604051600160a060020a03909116917ff8df31144d9c2f0f6b59d69b8b98abd5459d07f2742c4df920b25aae33c6482091a26000805473ffffffffffffffffffffffffffffffffffffffff19169055565b600154600160a060020a031681565b600054600160a060020a031681565b600054600160a060020a031633146101b157600080fd5b6001805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0383811691909117918290556040519116907f278c70ced5f3e0e5eeb385b5ff9cb735748ba00a625147e66065ed48fc1562cd90600090a250565b600054600160a060020a0316331461022557600080fd5b61022e81610231565b50565b600160a060020a038116151561024657600080fd5b60008054604051600160a060020a03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a36000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555600a165627a7a723058203517d74fe3e4e372423d25e15f03ada6dae0e16ac13d9b593802315a029473d30029",
+  "sourceMap": "134:236:21:-;;;567:5:35;:18;;-1:-1:-1;;;;;;567:18:35;575:10;567:18;;;134:236:21;;;;;;",
+  "deployedSourceMap": "134:236:21:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1001:111:35;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1001:111:35;;;;;;170:24:21;;8:9:-1;5:2;;;30:1;27;20:12;5:2;170:24:21;;;;;;;;-1:-1:-1;;;;;170:24:21;;;;;;;;;;;;;;238:20:35;;8:9:-1;5:2;;;30:1;27;20:12;5:2;238:20:35;;;;247:121:21;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;247:121:21;-1:-1:-1;;;;;247:121:21;;;;;1274:103:35;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;1274:103:35;-1:-1:-1;;;;;1274:103:35;;;;;1001:111;719:5;;-1:-1:-1;;;;;719:5:35;705:10;:19;697:28;;;;;;1077:5;;;1058:25;;-1:-1:-1;;;;;1077:5:35;;;;1058:25;;;1105:1;1089:18;;-1:-1:-1;;1089:18:35;;;1001:111::o;170:24:21:-;;;-1:-1:-1;;;;;170:24:21;;:::o;238:20:35:-;;;-1:-1:-1;;;;;238:20:35;;:::o;247:121:21:-;719:5:35;;-1:-1:-1;;;;;719:5:35;705:10;:19;697:28;;;;;;311:8:21;:20;;-1:-1:-1;;311:20:21;-1:-1:-1;;;;;311:20:21;;;;;;;;;;;342:21;;354:8;;;342:21;;-1:-1:-1;;342:21:21;247:121;:::o;1274:103:35:-;719:5;;-1:-1:-1;;;;;719:5:35;705:10;:19;697:28;;;;;;1343:29;1362:9;1343:18;:29::i;:::-;1274:103;:::o;1512:171::-;-1:-1:-1;;;;;1582:23:35;;;;1574:32;;;;;;1638:5;;;1617:38;;-1:-1:-1;;;;;1617:38:35;;;;1638:5;;;1617:38;;;1661:5;:17;;-1:-1:-1;;1661:17:35;-1:-1:-1;;;;;1661:17:35;;;;;;;;;;1512:171::o",
+  "source": "pragma solidity ^0.4.24;\n\nimport \"./Registry.sol\";\n\n\n// Superclass for contracts that have a registry that can be set by their owners\ncontract HasRegistry is Ownable {\n  Registry public registry;\n\n  event SetRegistry(address indexed registry);\n\n  function setRegistry(Registry _registry) public onlyOwner {\n    registry = _registry;\n    emit SetRegistry(registry);\n  }\n}\n",
+  "sourcePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/HasRegistry.sol",
+  "ast": {
+    "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/HasRegistry.sol",
+    "exportedSymbols": {
+      "HasRegistry": [
+        2690
+      ]
+    },
+    "id": 2691,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2664,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:21"
+      },
+      {
+        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/Registry.sol",
+        "file": "./Registry.sol",
+        "id": 2665,
+        "nodeType": "ImportDirective",
+        "scope": 2691,
+        "sourceUnit": 2904,
+        "src": "26:24:21",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2666,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3530,
+              "src": "158:7:21",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$3530",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 2667,
+            "nodeType": "InheritanceSpecifier",
+            "src": "158:7:21"
+          }
+        ],
+        "contractDependencies": [
+          3530
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2690,
+        "linearizedBaseContracts": [
+          2690,
+          3530
+        ],
+        "name": "HasRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2669,
+            "name": "registry",
+            "nodeType": "VariableDeclaration",
+            "scope": 2690,
+            "src": "170:24:21",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Registry_$2903",
+              "typeString": "contract Registry"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 2668,
+              "name": "Registry",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2903,
+              "src": "170:8:21",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Registry_$2903",
+                "typeString": "contract Registry"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 2673,
+            "name": "SetRegistry",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2672,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2671,
+                  "indexed": true,
+                  "name": "registry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2673,
+                  "src": "217:24:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2670,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "217:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "216:26:21"
+            },
+            "src": "199:44:21"
+          },
+          {
+            "body": {
+              "id": 2688,
+              "nodeType": "Block",
+              "src": "305:63:21",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2682,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2680,
+                      "name": "registry",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2669,
+                      "src": "311:8:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Registry_$2903",
+                        "typeString": "contract Registry"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 2681,
+                      "name": "_registry",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2675,
+                      "src": "322:9:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Registry_$2903",
+                        "typeString": "contract Registry"
+                      }
+                    },
+                    "src": "311:20:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Registry_$2903",
+                      "typeString": "contract Registry"
+                    }
+                  },
+                  "id": 2683,
+                  "nodeType": "ExpressionStatement",
+                  "src": "311:20:21"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2685,
+                        "name": "registry",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2669,
+                        "src": "354:8:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Registry_$2903",
+                          "typeString": "contract Registry"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Registry_$2903",
+                          "typeString": "contract Registry"
+                        }
+                      ],
+                      "id": 2684,
+                      "name": "SetRegistry",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2673,
+                      "src": "342:11:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 2686,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "342:21:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2687,
+                  "nodeType": "EmitStatement",
+                  "src": "337:26:21"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2689,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 2678,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2677,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 3478,
+                  "src": "295:9:21",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "295:9:21"
+              }
+            ],
+            "name": "setRegistry",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2676,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2675,
+                  "name": "_registry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2689,
+                  "src": "268:18:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Registry_$2903",
+                    "typeString": "contract Registry"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2674,
+                    "name": "Registry",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2903,
+                    "src": "268:8:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Registry_$2903",
+                      "typeString": "contract Registry"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "267:20:21"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2679,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "305:0:21"
+            },
+            "scope": 2690,
+            "src": "247:121:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2691,
+        "src": "134:236:21"
+      }
+    ],
+    "src": "0:371:21"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/HasRegistry.sol",
+    "exportedSymbols": {
+      "HasRegistry": [
+        2690
+      ]
+    },
+    "id": 2691,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2664,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:21"
+      },
+      {
+        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/Registry.sol",
+        "file": "./Registry.sol",
+        "id": 2665,
+        "nodeType": "ImportDirective",
+        "scope": 2691,
+        "sourceUnit": 2904,
+        "src": "26:24:21",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2666,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3530,
+              "src": "158:7:21",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$3530",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 2667,
+            "nodeType": "InheritanceSpecifier",
+            "src": "158:7:21"
+          }
+        ],
+        "contractDependencies": [
+          3530
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2690,
+        "linearizedBaseContracts": [
+          2690,
+          3530
+        ],
+        "name": "HasRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 2669,
+            "name": "registry",
+            "nodeType": "VariableDeclaration",
+            "scope": 2690,
+            "src": "170:24:21",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Registry_$2903",
+              "typeString": "contract Registry"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 2668,
+              "name": "Registry",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2903,
+              "src": "170:8:21",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Registry_$2903",
+                "typeString": "contract Registry"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 2673,
+            "name": "SetRegistry",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 2672,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2671,
+                  "indexed": true,
+                  "name": "registry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2673,
+                  "src": "217:24:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2670,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "217:7:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "216:26:21"
+            },
+            "src": "199:44:21"
+          },
+          {
+            "body": {
+              "id": 2688,
+              "nodeType": "Block",
+              "src": "305:63:21",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 2682,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 2680,
+                      "name": "registry",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2669,
+                      "src": "311:8:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Registry_$2903",
+                        "typeString": "contract Registry"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 2681,
+                      "name": "_registry",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2675,
+                      "src": "322:9:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Registry_$2903",
+                        "typeString": "contract Registry"
+                      }
+                    },
+                    "src": "311:20:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Registry_$2903",
+                      "typeString": "contract Registry"
+                    }
+                  },
+                  "id": 2683,
+                  "nodeType": "ExpressionStatement",
+                  "src": "311:20:21"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 2685,
+                        "name": "registry",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 2669,
+                        "src": "354:8:21",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Registry_$2903",
+                          "typeString": "contract Registry"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Registry_$2903",
+                          "typeString": "contract Registry"
+                        }
+                      ],
+                      "id": 2684,
+                      "name": "SetRegistry",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2673,
+                      "src": "342:11:21",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 2686,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "342:21:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 2687,
+                  "nodeType": "EmitStatement",
+                  "src": "337:26:21"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2689,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 2678,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 2677,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 3478,
+                  "src": "295:9:21",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "295:9:21"
+              }
+            ],
+            "name": "setRegistry",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2676,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2675,
+                  "name": "_registry",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2689,
+                  "src": "268:18:21",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Registry_$2903",
+                    "typeString": "contract Registry"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2674,
+                    "name": "Registry",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2903,
+                    "src": "268:8:21",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Registry_$2903",
+                      "typeString": "contract Registry"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "267:20:21"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2679,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "305:0:21"
+            },
+            "scope": 2690,
+            "src": "247:121:21",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2691,
+        "src": "134:236:21"
+      }
+    ],
+    "src": "0:371:21"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-09-28T03:23:17.534Z"
+}

@@ -1,0 +1,2055 @@
+{
+  "contractName": "DefaultRegistryAccessManager",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "_attribute",
+          "type": "uint8"
+        },
+        {
+          "name": "_operator",
+          "type": "address"
+        }
+      ],
+      "name": "confirmWrite",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b50610322806100206000396000f3006080604052600436106100405763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663755fe57a8114610045575b600080fd5b34801561005157600080fd5b5061008073ffffffffffffffffffffffffffffffffffffffff60043581169060ff602435169060443516610094565b604080519115158252519081900360200190f35b6000803390508073ffffffffffffffffffffffffffffffffffffffff16638da5cb5b6040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b1580156100fe57600080fd5b505af1158015610112573d6000803e3d6000fd5b505050506040513d602081101561012857600080fd5b505173ffffffffffffffffffffffffffffffffffffffff8481169116141561015357600191506102ee565b6040517f1ca451a300000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8481166004830190815290831691631ca451a3918691600091906024018260ff16815260200192505050602060405180830381600087803b1580156101d257600080fd5b505af11580156101e6573d6000803e3d6000fd5b505050506040513d60208110156101fc57600080fd5b50511561021957600184600581111561021157fe5b1491506102ee565b604080517f1ca451a300000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff858116600483015260016024830152915191831691631ca451a3916044808201926020929091908290030181600087803b15801561029257600080fd5b505af11580156102a6573d6000803e3d6000fd5b505050506040513d60208110156102bc57600080fd5b5051156102ee5760018460058111156102d157fe5b141580156102eb575060008460058111156102e857fe5b14155b91505b5093925050505600a165627a7a723058207dcd60cf48eb014286ea54e8b6028cefb2192fd0fa7eb675e237a80b60f3faac0029",
+  "deployedBytecode": "0x6080604052600436106100405763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663755fe57a8114610045575b600080fd5b34801561005157600080fd5b5061008073ffffffffffffffffffffffffffffffffffffffff60043581169060ff602435169060443516610094565b604080519115158252519081900360200190f35b6000803390508073ffffffffffffffffffffffffffffffffffffffff16638da5cb5b6040518163ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401602060405180830381600087803b1580156100fe57600080fd5b505af1158015610112573d6000803e3d6000fd5b505050506040513d602081101561012857600080fd5b505173ffffffffffffffffffffffffffffffffffffffff8481169116141561015357600191506102ee565b6040517f1ca451a300000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8481166004830190815290831691631ca451a3918691600091906024018260ff16815260200192505050602060405180830381600087803b1580156101d257600080fd5b505af11580156101e6573d6000803e3d6000fd5b505050506040513d60208110156101fc57600080fd5b50511561021957600184600581111561021157fe5b1491506102ee565b604080517f1ca451a300000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff858116600483015260016024830152915191831691631ca451a3916044808201926020929091908290030181600087803b15801561029257600080fd5b505af11580156102a6573d6000803e3d6000fd5b505050506040513d60208110156102bc57600080fd5b5051156102ee5760018460058111156102d157fe5b141580156102eb575060008460058111156102e857fe5b14155b91505b5093925050505600a165627a7a723058207dcd60cf48eb014286ea54e8b6028cefb2192fd0fa7eb675e237a80b60f3faac0029",
+  "sourceMap": "142:708:20:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;142:708:20;;;;;;;",
+  "deployedSourceMap": "142:708:20:-;;;;;;;;;;;;;;;;;;;;;;;209:639;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;209:639:20;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;344:4;358:16;386:10;358:39;;420:7;:13;;;:15;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;420:15:20;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;420:15:20;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;420:15:20;407:28;;;;;;;403:441;;;452:4;445:11;;;;403:441;473:69;;;;;:20;:69;;;;;;;;;:20;;;;;;494:9;;505:36;;473:69;;;505:36;473:69;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;473:69:20;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;473:69:20;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;473:69:20;469:375;;;574:37;560:10;:51;;;;;;;;;552:60;;;;469:375;629:70;;;;;;:20;:70;;;;;;;661:37;629:70;;;;;;:20;;;;;;:70;;;;;;;;;;;;;;;-1:-1:-1;629:20:20;:70;;;5:2:-1;;;;30:1;27;20:12;5:2;629:70:20;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;629:70:20;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;629:70:20;625:219;;;731:37;717:10;:51;;;;;;;;;;:119;;;;-1:-1:-1;800:36:20;786:10;:50;;;;;;;;;;717:119;709:128;;625:219;209:639;;;;;;:::o",
+  "source": "pragma solidity ^0.4.24;\n\nimport \"../zeppelin/contracts/math/SafeMath.sol\";\n\nimport \"./Registry.sol\";\nimport \"./RegistryAccessManager.sol\";\n\n\ncontract DefaultRegistryAccessManager is RegistryAccessManager {\n  function confirmWrite(\n    address /*_who*/,\n    Attribute.AttributeType _attribute,\n    address _operator\n  )\n    public\n    returns (bool)\n  {\n    Registry _client = Registry(msg.sender);\n    if (_operator == _client.owner()) {\n      return true;\n    } else if (_client.hasAttribute(_operator, Attribute.AttributeType.ROLE_MANAGER)) {\n      return (_attribute == Attribute.AttributeType.ROLE_OPERATOR);\n    } else if (_client.hasAttribute(_operator, Attribute.AttributeType.ROLE_OPERATOR)) {\n      return (_attribute != Attribute.AttributeType.ROLE_OPERATOR &&\n              _attribute != Attribute.AttributeType.ROLE_MANAGER);\n    }\n  }\n}\n",
+  "sourcePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/DefaultRegistryAccessManager.sol",
+  "ast": {
+    "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/DefaultRegistryAccessManager.sol",
+    "exportedSymbols": {
+      "DefaultRegistryAccessManager": [
+        2662
+      ]
+    },
+    "id": 2663,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2590,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:20"
+      },
+      {
+        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/zeppelin/contracts/math/SafeMath.sol",
+        "file": "../zeppelin/contracts/math/SafeMath.sol",
+        "id": 2591,
+        "nodeType": "ImportDirective",
+        "scope": 2663,
+        "sourceUnit": 3241,
+        "src": "26:49:20",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/Registry.sol",
+        "file": "./Registry.sol",
+        "id": 2592,
+        "nodeType": "ImportDirective",
+        "scope": 2663,
+        "sourceUnit": 2904,
+        "src": "77:24:20",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/RegistryAccessManager.sol",
+        "file": "./RegistryAccessManager.sol",
+        "id": 2593,
+        "nodeType": "ImportDirective",
+        "scope": 2663,
+        "sourceUnit": 2920,
+        "src": "102:37:20",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2594,
+              "name": "RegistryAccessManager",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2919,
+              "src": "183:21:20",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_RegistryAccessManager_$2919",
+                "typeString": "contract RegistryAccessManager"
+              }
+            },
+            "id": 2595,
+            "nodeType": "InheritanceSpecifier",
+            "src": "183:21:20"
+          }
+        ],
+        "contractDependencies": [
+          2919
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2662,
+        "linearizedBaseContracts": [
+          2662,
+          2919
+        ],
+        "name": "DefaultRegistryAccessManager",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 2660,
+              "nodeType": "Block",
+              "src": "352:496:20",
+              "statements": [
+                {
+                  "assignments": [
+                    2607
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 2607,
+                      "name": "_client",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 2661,
+                      "src": "358:16:20",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Registry_$2903",
+                        "typeString": "contract Registry"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 2606,
+                        "name": "Registry",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 2903,
+                        "src": "358:8:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Registry_$2903",
+                          "typeString": "contract Registry"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 2612,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2609,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3682,
+                          "src": "386:3:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2610,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "386:10:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 2608,
+                      "name": "Registry",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2903,
+                      "src": "377:8:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_Registry_$2903_$",
+                        "typeString": "type(contract Registry)"
+                      }
+                    },
+                    "id": 2611,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "377:20:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Registry_$2903",
+                      "typeString": "contract Registry"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "358:39:20"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "id": 2617,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 2613,
+                      "name": "_operator",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2601,
+                      "src": "407:9:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2614,
+                          "name": "_client",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2607,
+                          "src": "420:7:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Registry_$2903",
+                            "typeString": "contract Registry"
+                          }
+                        },
+                        "id": 2615,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "owner",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 3448,
+                        "src": "420:13:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                          "typeString": "function () view external returns (address)"
+                        }
+                      },
+                      "id": 2616,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "420:15:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "407:28:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "condition": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 2623,
+                          "name": "_operator",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2601,
+                          "src": "494:9:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 2624,
+                              "name": "Attribute",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2588,
+                              "src": "505:9:20",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_Attribute_$2588_$",
+                                "typeString": "type(library Attribute)"
+                              }
+                            },
+                            "id": 2625,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "AttributeType",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 2575,
+                            "src": "505:23:20",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_enum$_AttributeType_$2575_$",
+                              "typeString": "type(enum Attribute.AttributeType)"
+                            }
+                          },
+                          "id": 2626,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "ROLE_MANAGER",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "505:36:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_AttributeType_$2575",
+                            "typeString": "enum Attribute.AttributeType"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_enum$_AttributeType_$2575",
+                            "typeString": "enum Attribute.AttributeType"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2621,
+                          "name": "_client",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2607,
+                          "src": "473:7:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Registry_$2903",
+                            "typeString": "contract Registry"
+                          }
+                        },
+                        "id": 2622,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hasAttribute",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 2868,
+                        "src": "473:20:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_view$_t_address_$_t_enum$_AttributeType_$2575_$returns$_t_bool_$",
+                          "typeString": "function (address,enum Attribute.AttributeType) view external returns (bool)"
+                        }
+                      },
+                      "id": 2627,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "473:69:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "falseBody": {
+                      "condition": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 2638,
+                            "name": "_operator",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2601,
+                            "src": "650:9:20",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 2639,
+                                "name": "Attribute",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 2588,
+                                "src": "661:9:20",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_contract$_Attribute_$2588_$",
+                                  "typeString": "type(library Attribute)"
+                                }
+                              },
+                              "id": 2640,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "AttributeType",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 2575,
+                              "src": "661:23:20",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_AttributeType_$2575_$",
+                                "typeString": "type(enum Attribute.AttributeType)"
+                              }
+                            },
+                            "id": 2641,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "ROLE_OPERATOR",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "661:37:20",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_AttributeType_$2575",
+                              "typeString": "enum Attribute.AttributeType"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_enum$_AttributeType_$2575",
+                              "typeString": "enum Attribute.AttributeType"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2636,
+                            "name": "_client",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2607,
+                            "src": "629:7:20",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Registry_$2903",
+                              "typeString": "contract Registry"
+                            }
+                          },
+                          "id": 2637,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "hasAttribute",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 2868,
+                          "src": "629:20:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$_t_enum$_AttributeType_$2575_$returns$_t_bool_$",
+                            "typeString": "function (address,enum Attribute.AttributeType) view external returns (bool)"
+                          }
+                        },
+                        "id": 2642,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "629:70:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "falseBody": null,
+                      "id": 2657,
+                      "nodeType": "IfStatement",
+                      "src": "625:219:20",
+                      "trueBody": {
+                        "id": 2656,
+                        "nodeType": "Block",
+                        "src": "701:143:20",
+                        "statements": [
+                          {
+                            "expression": {
+                              "argumentTypes": null,
+                              "components": [
+                                {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                  },
+                                  "id": 2653,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "leftExpression": {
+                                    "argumentTypes": null,
+                                    "commonType": {
+                                      "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                      "typeString": "enum Attribute.AttributeType"
+                                    },
+                                    "id": 2647,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "leftExpression": {
+                                      "argumentTypes": null,
+                                      "id": 2643,
+                                      "name": "_attribute",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 2599,
+                                      "src": "717:10:20",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                        "typeString": "enum Attribute.AttributeType"
+                                      }
+                                    },
+                                    "nodeType": "BinaryOperation",
+                                    "operator": "!=",
+                                    "rightExpression": {
+                                      "argumentTypes": null,
+                                      "expression": {
+                                        "argumentTypes": null,
+                                        "expression": {
+                                          "argumentTypes": null,
+                                          "id": 2644,
+                                          "name": "Attribute",
+                                          "nodeType": "Identifier",
+                                          "overloadedDeclarations": [],
+                                          "referencedDeclaration": 2588,
+                                          "src": "731:9:20",
+                                          "typeDescriptions": {
+                                            "typeIdentifier": "t_type$_t_contract$_Attribute_$2588_$",
+                                            "typeString": "type(library Attribute)"
+                                          }
+                                        },
+                                        "id": 2645,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "memberName": "AttributeType",
+                                        "nodeType": "MemberAccess",
+                                        "referencedDeclaration": 2575,
+                                        "src": "731:23:20",
+                                        "typeDescriptions": {
+                                          "typeIdentifier": "t_type$_t_enum$_AttributeType_$2575_$",
+                                          "typeString": "type(enum Attribute.AttributeType)"
+                                        }
+                                      },
+                                      "id": 2646,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "memberName": "ROLE_OPERATOR",
+                                      "nodeType": "MemberAccess",
+                                      "referencedDeclaration": null,
+                                      "src": "731:37:20",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                        "typeString": "enum Attribute.AttributeType"
+                                      }
+                                    },
+                                    "src": "717:51:20",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_bool",
+                                      "typeString": "bool"
+                                    }
+                                  },
+                                  "nodeType": "BinaryOperation",
+                                  "operator": "&&",
+                                  "rightExpression": {
+                                    "argumentTypes": null,
+                                    "commonType": {
+                                      "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                      "typeString": "enum Attribute.AttributeType"
+                                    },
+                                    "id": 2652,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "leftExpression": {
+                                      "argumentTypes": null,
+                                      "id": 2648,
+                                      "name": "_attribute",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 2599,
+                                      "src": "786:10:20",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                        "typeString": "enum Attribute.AttributeType"
+                                      }
+                                    },
+                                    "nodeType": "BinaryOperation",
+                                    "operator": "!=",
+                                    "rightExpression": {
+                                      "argumentTypes": null,
+                                      "expression": {
+                                        "argumentTypes": null,
+                                        "expression": {
+                                          "argumentTypes": null,
+                                          "id": 2649,
+                                          "name": "Attribute",
+                                          "nodeType": "Identifier",
+                                          "overloadedDeclarations": [],
+                                          "referencedDeclaration": 2588,
+                                          "src": "800:9:20",
+                                          "typeDescriptions": {
+                                            "typeIdentifier": "t_type$_t_contract$_Attribute_$2588_$",
+                                            "typeString": "type(library Attribute)"
+                                          }
+                                        },
+                                        "id": 2650,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "memberName": "AttributeType",
+                                        "nodeType": "MemberAccess",
+                                        "referencedDeclaration": 2575,
+                                        "src": "800:23:20",
+                                        "typeDescriptions": {
+                                          "typeIdentifier": "t_type$_t_enum$_AttributeType_$2575_$",
+                                          "typeString": "type(enum Attribute.AttributeType)"
+                                        }
+                                      },
+                                      "id": 2651,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "memberName": "ROLE_MANAGER",
+                                      "nodeType": "MemberAccess",
+                                      "referencedDeclaration": null,
+                                      "src": "800:36:20",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                        "typeString": "enum Attribute.AttributeType"
+                                      }
+                                    },
+                                    "src": "786:50:20",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_bool",
+                                      "typeString": "bool"
+                                    }
+                                  },
+                                  "src": "717:119:20",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                  }
+                                }
+                              ],
+                              "id": 2654,
+                              "isConstant": false,
+                              "isInlineArray": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "TupleExpression",
+                              "src": "716:121:20",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            },
+                            "functionReturnParameters": 2605,
+                            "id": 2655,
+                            "nodeType": "Return",
+                            "src": "709:128:20"
+                          }
+                        ]
+                      }
+                    },
+                    "id": 2658,
+                    "nodeType": "IfStatement",
+                    "src": "469:375:20",
+                    "trueBody": {
+                      "id": 2635,
+                      "nodeType": "Block",
+                      "src": "544:75:20",
+                      "statements": [
+                        {
+                          "expression": {
+                            "argumentTypes": null,
+                            "components": [
+                              {
+                                "argumentTypes": null,
+                                "commonType": {
+                                  "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                  "typeString": "enum Attribute.AttributeType"
+                                },
+                                "id": 2632,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftExpression": {
+                                  "argumentTypes": null,
+                                  "id": 2628,
+                                  "name": "_attribute",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 2599,
+                                  "src": "560:10:20",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                    "typeString": "enum Attribute.AttributeType"
+                                  }
+                                },
+                                "nodeType": "BinaryOperation",
+                                "operator": "==",
+                                "rightExpression": {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "expression": {
+                                      "argumentTypes": null,
+                                      "id": 2629,
+                                      "name": "Attribute",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 2588,
+                                      "src": "574:9:20",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_type$_t_contract$_Attribute_$2588_$",
+                                        "typeString": "type(library Attribute)"
+                                      }
+                                    },
+                                    "id": 2630,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "memberName": "AttributeType",
+                                    "nodeType": "MemberAccess",
+                                    "referencedDeclaration": 2575,
+                                    "src": "574:23:20",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_type$_t_enum$_AttributeType_$2575_$",
+                                      "typeString": "type(enum Attribute.AttributeType)"
+                                    }
+                                  },
+                                  "id": 2631,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "memberName": "ROLE_OPERATOR",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": null,
+                                  "src": "574:37:20",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                    "typeString": "enum Attribute.AttributeType"
+                                  }
+                                },
+                                "src": "560:51:20",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              }
+                            ],
+                            "id": 2633,
+                            "isConstant": false,
+                            "isInlineArray": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "TupleExpression",
+                            "src": "559:53:20",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "functionReturnParameters": 2605,
+                          "id": 2634,
+                          "nodeType": "Return",
+                          "src": "552:60:20"
+                        }
+                      ]
+                    }
+                  },
+                  "id": 2659,
+                  "nodeType": "IfStatement",
+                  "src": "403:441:20",
+                  "trueBody": {
+                    "id": 2620,
+                    "nodeType": "Block",
+                    "src": "437:26:20",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "hexValue": "74727565",
+                          "id": 2618,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "452:4:20",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "true"
+                        },
+                        "functionReturnParameters": 2605,
+                        "id": 2619,
+                        "nodeType": "Return",
+                        "src": "445:11:20"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2661,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "confirmWrite",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2602,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2597,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2661,
+                  "src": "236:7:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2596,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "236:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2599,
+                  "name": "_attribute",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2661,
+                  "src": "258:34:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_AttributeType_$2575",
+                    "typeString": "enum Attribute.AttributeType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2598,
+                    "name": "Attribute.AttributeType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2575,
+                    "src": "258:23:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_AttributeType_$2575",
+                      "typeString": "enum Attribute.AttributeType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2601,
+                  "name": "_operator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2661,
+                  "src": "298:17:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2600,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "298:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "230:89:20"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2605,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2604,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2661,
+                  "src": "344:4:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2603,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "344:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "343:6:20"
+            },
+            "scope": 2662,
+            "src": "209:639:20",
+            "stateMutability": "nonpayable",
+            "superFunction": 2918,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2663,
+        "src": "142:708:20"
+      }
+    ],
+    "src": "0:851:20"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/DefaultRegistryAccessManager.sol",
+    "exportedSymbols": {
+      "DefaultRegistryAccessManager": [
+        2662
+      ]
+    },
+    "id": 2663,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2590,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:20"
+      },
+      {
+        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/zeppelin/contracts/math/SafeMath.sol",
+        "file": "../zeppelin/contracts/math/SafeMath.sol",
+        "id": 2591,
+        "nodeType": "ImportDirective",
+        "scope": 2663,
+        "sourceUnit": 3241,
+        "src": "26:49:20",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/Registry.sol",
+        "file": "./Registry.sol",
+        "id": 2592,
+        "nodeType": "ImportDirective",
+        "scope": 2663,
+        "sourceUnit": 2904,
+        "src": "77:24:20",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/RegistryAccessManager.sol",
+        "file": "./RegistryAccessManager.sol",
+        "id": 2593,
+        "nodeType": "ImportDirective",
+        "scope": 2663,
+        "sourceUnit": 2920,
+        "src": "102:37:20",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 2594,
+              "name": "RegistryAccessManager",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 2919,
+              "src": "183:21:20",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_RegistryAccessManager_$2919",
+                "typeString": "contract RegistryAccessManager"
+              }
+            },
+            "id": 2595,
+            "nodeType": "InheritanceSpecifier",
+            "src": "183:21:20"
+          }
+        ],
+        "contractDependencies": [
+          2919
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2662,
+        "linearizedBaseContracts": [
+          2662,
+          2919
+        ],
+        "name": "DefaultRegistryAccessManager",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 2660,
+              "nodeType": "Block",
+              "src": "352:496:20",
+              "statements": [
+                {
+                  "assignments": [
+                    2607
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 2607,
+                      "name": "_client",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 2661,
+                      "src": "358:16:20",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Registry_$2903",
+                        "typeString": "contract Registry"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 2606,
+                        "name": "Registry",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 2903,
+                        "src": "358:8:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Registry_$2903",
+                          "typeString": "contract Registry"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 2612,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2609,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 3682,
+                          "src": "386:3:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 2610,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "386:10:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 2608,
+                      "name": "Registry",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2903,
+                      "src": "377:8:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_contract$_Registry_$2903_$",
+                        "typeString": "type(contract Registry)"
+                      }
+                    },
+                    "id": 2611,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "377:20:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Registry_$2903",
+                      "typeString": "contract Registry"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "358:39:20"
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "id": 2617,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 2613,
+                      "name": "_operator",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 2601,
+                      "src": "407:9:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2614,
+                          "name": "_client",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2607,
+                          "src": "420:7:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Registry_$2903",
+                            "typeString": "contract Registry"
+                          }
+                        },
+                        "id": 2615,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "owner",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 3448,
+                        "src": "420:13:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
+                          "typeString": "function () view external returns (address)"
+                        }
+                      },
+                      "id": 2616,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "420:15:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "407:28:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": {
+                    "condition": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 2623,
+                          "name": "_operator",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2601,
+                          "src": "494:9:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "expression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 2624,
+                              "name": "Attribute",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 2588,
+                              "src": "505:9:20",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_contract$_Attribute_$2588_$",
+                                "typeString": "type(library Attribute)"
+                              }
+                            },
+                            "id": 2625,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "AttributeType",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 2575,
+                            "src": "505:23:20",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_enum$_AttributeType_$2575_$",
+                              "typeString": "type(enum Attribute.AttributeType)"
+                            }
+                          },
+                          "id": 2626,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "memberName": "ROLE_MANAGER",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": null,
+                          "src": "505:36:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_AttributeType_$2575",
+                            "typeString": "enum Attribute.AttributeType"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          },
+                          {
+                            "typeIdentifier": "t_enum$_AttributeType_$2575",
+                            "typeString": "enum Attribute.AttributeType"
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 2621,
+                          "name": "_client",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 2607,
+                          "src": "473:7:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Registry_$2903",
+                            "typeString": "contract Registry"
+                          }
+                        },
+                        "id": 2622,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "hasAttribute",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 2868,
+                        "src": "473:20:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_view$_t_address_$_t_enum$_AttributeType_$2575_$returns$_t_bool_$",
+                          "typeString": "function (address,enum Attribute.AttributeType) view external returns (bool)"
+                        }
+                      },
+                      "id": 2627,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "473:69:20",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "falseBody": {
+                      "condition": {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 2638,
+                            "name": "_operator",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2601,
+                            "src": "650:9:20",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 2639,
+                                "name": "Attribute",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 2588,
+                                "src": "661:9:20",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_type$_t_contract$_Attribute_$2588_$",
+                                  "typeString": "type(library Attribute)"
+                                }
+                              },
+                              "id": 2640,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "AttributeType",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 2575,
+                              "src": "661:23:20",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_AttributeType_$2575_$",
+                                "typeString": "type(enum Attribute.AttributeType)"
+                              }
+                            },
+                            "id": 2641,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "ROLE_OPERATOR",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "661:37:20",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_AttributeType_$2575",
+                              "typeString": "enum Attribute.AttributeType"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            },
+                            {
+                              "typeIdentifier": "t_enum$_AttributeType_$2575",
+                              "typeString": "enum Attribute.AttributeType"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 2636,
+                            "name": "_client",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 2607,
+                            "src": "629:7:20",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Registry_$2903",
+                              "typeString": "contract Registry"
+                            }
+                          },
+                          "id": 2637,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "hasAttribute",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 2868,
+                          "src": "629:20:20",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_external_view$_t_address_$_t_enum$_AttributeType_$2575_$returns$_t_bool_$",
+                            "typeString": "function (address,enum Attribute.AttributeType) view external returns (bool)"
+                          }
+                        },
+                        "id": 2642,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "629:70:20",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      "falseBody": null,
+                      "id": 2657,
+                      "nodeType": "IfStatement",
+                      "src": "625:219:20",
+                      "trueBody": {
+                        "id": 2656,
+                        "nodeType": "Block",
+                        "src": "701:143:20",
+                        "statements": [
+                          {
+                            "expression": {
+                              "argumentTypes": null,
+                              "components": [
+                                {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                  },
+                                  "id": 2653,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "leftExpression": {
+                                    "argumentTypes": null,
+                                    "commonType": {
+                                      "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                      "typeString": "enum Attribute.AttributeType"
+                                    },
+                                    "id": 2647,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "leftExpression": {
+                                      "argumentTypes": null,
+                                      "id": 2643,
+                                      "name": "_attribute",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 2599,
+                                      "src": "717:10:20",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                        "typeString": "enum Attribute.AttributeType"
+                                      }
+                                    },
+                                    "nodeType": "BinaryOperation",
+                                    "operator": "!=",
+                                    "rightExpression": {
+                                      "argumentTypes": null,
+                                      "expression": {
+                                        "argumentTypes": null,
+                                        "expression": {
+                                          "argumentTypes": null,
+                                          "id": 2644,
+                                          "name": "Attribute",
+                                          "nodeType": "Identifier",
+                                          "overloadedDeclarations": [],
+                                          "referencedDeclaration": 2588,
+                                          "src": "731:9:20",
+                                          "typeDescriptions": {
+                                            "typeIdentifier": "t_type$_t_contract$_Attribute_$2588_$",
+                                            "typeString": "type(library Attribute)"
+                                          }
+                                        },
+                                        "id": 2645,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "memberName": "AttributeType",
+                                        "nodeType": "MemberAccess",
+                                        "referencedDeclaration": 2575,
+                                        "src": "731:23:20",
+                                        "typeDescriptions": {
+                                          "typeIdentifier": "t_type$_t_enum$_AttributeType_$2575_$",
+                                          "typeString": "type(enum Attribute.AttributeType)"
+                                        }
+                                      },
+                                      "id": 2646,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "memberName": "ROLE_OPERATOR",
+                                      "nodeType": "MemberAccess",
+                                      "referencedDeclaration": null,
+                                      "src": "731:37:20",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                        "typeString": "enum Attribute.AttributeType"
+                                      }
+                                    },
+                                    "src": "717:51:20",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_bool",
+                                      "typeString": "bool"
+                                    }
+                                  },
+                                  "nodeType": "BinaryOperation",
+                                  "operator": "&&",
+                                  "rightExpression": {
+                                    "argumentTypes": null,
+                                    "commonType": {
+                                      "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                      "typeString": "enum Attribute.AttributeType"
+                                    },
+                                    "id": 2652,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "leftExpression": {
+                                      "argumentTypes": null,
+                                      "id": 2648,
+                                      "name": "_attribute",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 2599,
+                                      "src": "786:10:20",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                        "typeString": "enum Attribute.AttributeType"
+                                      }
+                                    },
+                                    "nodeType": "BinaryOperation",
+                                    "operator": "!=",
+                                    "rightExpression": {
+                                      "argumentTypes": null,
+                                      "expression": {
+                                        "argumentTypes": null,
+                                        "expression": {
+                                          "argumentTypes": null,
+                                          "id": 2649,
+                                          "name": "Attribute",
+                                          "nodeType": "Identifier",
+                                          "overloadedDeclarations": [],
+                                          "referencedDeclaration": 2588,
+                                          "src": "800:9:20",
+                                          "typeDescriptions": {
+                                            "typeIdentifier": "t_type$_t_contract$_Attribute_$2588_$",
+                                            "typeString": "type(library Attribute)"
+                                          }
+                                        },
+                                        "id": 2650,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "memberName": "AttributeType",
+                                        "nodeType": "MemberAccess",
+                                        "referencedDeclaration": 2575,
+                                        "src": "800:23:20",
+                                        "typeDescriptions": {
+                                          "typeIdentifier": "t_type$_t_enum$_AttributeType_$2575_$",
+                                          "typeString": "type(enum Attribute.AttributeType)"
+                                        }
+                                      },
+                                      "id": 2651,
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "memberName": "ROLE_MANAGER",
+                                      "nodeType": "MemberAccess",
+                                      "referencedDeclaration": null,
+                                      "src": "800:36:20",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                        "typeString": "enum Attribute.AttributeType"
+                                      }
+                                    },
+                                    "src": "786:50:20",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_bool",
+                                      "typeString": "bool"
+                                    }
+                                  },
+                                  "src": "717:119:20",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_bool",
+                                    "typeString": "bool"
+                                  }
+                                }
+                              ],
+                              "id": 2654,
+                              "isConstant": false,
+                              "isInlineArray": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "TupleExpression",
+                              "src": "716:121:20",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              }
+                            },
+                            "functionReturnParameters": 2605,
+                            "id": 2655,
+                            "nodeType": "Return",
+                            "src": "709:128:20"
+                          }
+                        ]
+                      }
+                    },
+                    "id": 2658,
+                    "nodeType": "IfStatement",
+                    "src": "469:375:20",
+                    "trueBody": {
+                      "id": 2635,
+                      "nodeType": "Block",
+                      "src": "544:75:20",
+                      "statements": [
+                        {
+                          "expression": {
+                            "argumentTypes": null,
+                            "components": [
+                              {
+                                "argumentTypes": null,
+                                "commonType": {
+                                  "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                  "typeString": "enum Attribute.AttributeType"
+                                },
+                                "id": 2632,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "leftExpression": {
+                                  "argumentTypes": null,
+                                  "id": 2628,
+                                  "name": "_attribute",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 2599,
+                                  "src": "560:10:20",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                    "typeString": "enum Attribute.AttributeType"
+                                  }
+                                },
+                                "nodeType": "BinaryOperation",
+                                "operator": "==",
+                                "rightExpression": {
+                                  "argumentTypes": null,
+                                  "expression": {
+                                    "argumentTypes": null,
+                                    "expression": {
+                                      "argumentTypes": null,
+                                      "id": 2629,
+                                      "name": "Attribute",
+                                      "nodeType": "Identifier",
+                                      "overloadedDeclarations": [],
+                                      "referencedDeclaration": 2588,
+                                      "src": "574:9:20",
+                                      "typeDescriptions": {
+                                        "typeIdentifier": "t_type$_t_contract$_Attribute_$2588_$",
+                                        "typeString": "type(library Attribute)"
+                                      }
+                                    },
+                                    "id": 2630,
+                                    "isConstant": false,
+                                    "isLValue": false,
+                                    "isPure": false,
+                                    "lValueRequested": false,
+                                    "memberName": "AttributeType",
+                                    "nodeType": "MemberAccess",
+                                    "referencedDeclaration": 2575,
+                                    "src": "574:23:20",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_type$_t_enum$_AttributeType_$2575_$",
+                                      "typeString": "type(enum Attribute.AttributeType)"
+                                    }
+                                  },
+                                  "id": 2631,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": true,
+                                  "lValueRequested": false,
+                                  "memberName": "ROLE_OPERATOR",
+                                  "nodeType": "MemberAccess",
+                                  "referencedDeclaration": null,
+                                  "src": "574:37:20",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_enum$_AttributeType_$2575",
+                                    "typeString": "enum Attribute.AttributeType"
+                                  }
+                                },
+                                "src": "560:51:20",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                }
+                              }
+                            ],
+                            "id": 2633,
+                            "isConstant": false,
+                            "isInlineArray": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "TupleExpression",
+                            "src": "559:53:20",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_bool",
+                              "typeString": "bool"
+                            }
+                          },
+                          "functionReturnParameters": 2605,
+                          "id": 2634,
+                          "nodeType": "Return",
+                          "src": "552:60:20"
+                        }
+                      ]
+                    }
+                  },
+                  "id": 2659,
+                  "nodeType": "IfStatement",
+                  "src": "403:441:20",
+                  "trueBody": {
+                    "id": 2620,
+                    "nodeType": "Block",
+                    "src": "437:26:20",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "hexValue": "74727565",
+                          "id": 2618,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "452:4:20",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "true"
+                        },
+                        "functionReturnParameters": 2605,
+                        "id": 2619,
+                        "nodeType": "Return",
+                        "src": "445:11:20"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 2661,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "confirmWrite",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2602,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2597,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2661,
+                  "src": "236:7:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2596,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "236:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2599,
+                  "name": "_attribute",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2661,
+                  "src": "258:34:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_AttributeType_$2575",
+                    "typeString": "enum Attribute.AttributeType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 2598,
+                    "name": "Attribute.AttributeType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 2575,
+                    "src": "258:23:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_AttributeType_$2575",
+                      "typeString": "enum Attribute.AttributeType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2601,
+                  "name": "_operator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2661,
+                  "src": "298:17:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2600,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "298:7:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "230:89:20"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 2605,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2604,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2661,
+                  "src": "344:4:20",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 2603,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "344:4:20",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "343:6:20"
+            },
+            "scope": 2662,
+            "src": "209:639:20",
+            "stateMutability": "nonpayable",
+            "superFunction": 2918,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2663,
+        "src": "142:708:20"
+      }
+    ],
+    "src": "0:851:20"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-09-28T03:23:17.540Z"
+}
