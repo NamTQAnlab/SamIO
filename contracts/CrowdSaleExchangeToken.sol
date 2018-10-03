@@ -25,14 +25,12 @@ contract CrowdsaleExchangeToken is Crowdsale{
     );
 
     function buyTokensExchange(address _beneficiary, uint256 _amount) public {  // this function use if purchaser want to buy PAT token by RAX tokens
-
       _preValidatePurchase(_beneficiary, _amount);
+
+      token.(msg.sender , wallet , _amount);
 
       uint256 tokenAmount = _getTokenAmount(_amount); // getToekenAmount is fucntion check rates and return rate*amount
       _processPurchase(_beneficiary, tokenAmount); // token Amount will send to _beneficiary address
-
-      /* token.transferFrom(_beneficiary, address(token), _amount);
-      token.transferFrom(_beneficiary, address(this), _amount); */
 
       emit TokenExchange (
         msg.sender,

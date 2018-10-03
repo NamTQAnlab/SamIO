@@ -30,9 +30,9 @@ contract('CrowdsaleExchangeToken', function(accounts){
   contractAbi = JSON.parse(contractAbi);
   const tokenSupply = new BigNumber('1e22');
   const rate = new BigNumber(1);
-  const value = ether(42);
+  const value = ether(2);
   const expectedTokenAmount = rate.mul(value);
-  var contractAddress = '0xbf325644a880684de8c7e98b5e3a93595d747655';
+  var contractAddress = '0x2f49fcd6eef1c88a29c2f1c0cc64c20a39d6c9bd'; //because  we call from ABI so please change new address of token before run this test
   const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
   web3.eth.defaultAccount = owner;
   if (typeof web3 !== 'undefined') {
@@ -47,6 +47,7 @@ contract('CrowdsaleExchangeToken', function(accounts){
   var beneficiary = accounts[2];
   var wallet      = accounts[3]
   var systemWallet = accounts[7]
+  var acountB      = accounts[8]
   var registry;
   var balanceSheet;
   var _token;
@@ -57,77 +58,84 @@ contract('CrowdsaleExchangeToken', function(accounts){
   describe('mint through contractInstance', function(){
     it('should be mint throungh contractInstance', async function(){ // test mint ok
       let beforeBalan = await contractInstance.balanceOf(owner);
-      await contractInstance.mint(owner, amount,{from: owner});
-      let AfeterBalan = await contractInstance.balanceOf(owner);
-      AfeterBalan.minus(beforeBalan).should.be.bignumber.equal(amount);
+      await contractInstance.mint(owner, amount, {from: owner});
+      let AfterBalan = await contractInstance.balanceOf(owner);
+      AfterBalan.minus(beforeBalan).should.be.bignumber.equal(amount);
+
     });
   });
-  describe('mint for crowdsale', async function(){
+  describe('mint for crowdsale exchange token', async function(){
     it('should be mint', async function(){
-      this.CrowdsaleExchangeToken = await CrowdsaleExchangeToken.new(rate, wallet , contractAddress);
       _token = await PATToken.new(tokenName, tokenSymbol, fixedLinkDoc, varLinkDoc, systemWallet);
       balanceSheet = await BalanceSheet.new();
       registry = await Registry.new();
       await balanceSheet.transferOwnership(_token.address).should.be.fulfilled;
-      await registry.setAttribute(this.CrowdsaleExchangeToken.address, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
       await _token.setBalanceSheet(balanceSheet.address).should.be.fulfilled;
       await _token.setRegistry(registry.address).should.be.fulfilled;
+      this.CrowdsaleExchangeToken = await CrowdsaleExchangeToken.new(rate, wallet , contractAddress);
+      await registry.setAttribute(this.CrowdsaleExchangeToken.address, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
       await _token.mint(this.CrowdsaleExchangeToken.address, tokenSupply);
     });
   });
   describe('buyTokensExchange', async function(){
     beforeEach(async function(){
-      await contractInstance.mint(owner, amount,{from: owner});
-      this.CrowdsaleExchangeToken = await CrowdsaleExchangeToken.new(rate, wallet , contractAddress);
+      await contractInstance.mint(owner, amount, {from: owner}); // RAX
+      await contractInstance.mint(purchaser, amount, {from: owner});
+      await contractInstance.transfer(purchaser, 100, {from: owner});
+      let AfterBalan = await contractInstance.balanceOf(purchaser);
+      // console.log(AfterBalan);
+
       _token = await PATToken.new(tokenName, tokenSymbol, fixedLinkDoc, varLinkDoc, systemWallet);
       balanceSheet = await BalanceSheet.new();
       registry = await Registry.new();
       await balanceSheet.transferOwnership(_token.address).should.be.fulfilled;
-      await registry.setAttribute(this.CrowdsaleExchangeToken.address, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
+      await registry.setAttribute(purchaser, 4, "NO_FEE").should.be.fulfilled;
+      (await registry.hasAttribute(purchaser, regAtt.IS_BLACKLISTED)).should.equal(false);
+      await registry.setAttribute(purchaser, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
       await _token.setBalanceSheet(balanceSheet.address).should.be.fulfilled;
       await _token.setRegistry(registry.address).should.be.fulfilled;
+
+
+      this.CrowdsaleExchangeToken = await CrowdsaleExchangeToken.new(rate, wallet, _token.address);
+      (await registry.hasAttribute(this.CrowdsaleExchangeToken.address, regAtt.IS_BLACKLISTED)).should.equal(false);
+      await registry.setAttribute(this.CrowdsaleExchangeToken.address, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
       await _token.mint(this.CrowdsaleExchangeToken.address, tokenSupply);
-      console.log(this.CrowdsaleExchangeToken.address);
       let test = await _token.balanceOf(this.CrowdsaleExchangeToken.address);
       console.log(test);
     });
-    it('should rejected and revert a non-null beneficiary', async function () {
-      await assertRevert(
-        this.CrowdsaleExchangeToken.buyTokensExchange(ZERO_ADDRESS, 2)
-      );
-    });
-    it('should reject and reverts on zero-valued payments', async function () {
-      await assertRevert(
-        this.CrowdsaleExchangeToken.buyTokensExchange(beneficiary, 0)
-      );
-    });
-    it('should accept payments', async function () {
-      let beforeEx  = await _token.balanceOf(beneficiary);
+
+    // it('should rejected and revert a non-null beneficiary', async function () {
+    //   await assertRevert(
+    //     this.CrowdsaleExchangeToken.buyTokensExchange(ZERO_ADDRESS, 2)
+    //   );
+    // });
+    // it('should reject and reverts on zero-valued payments', async function () {
+    //   await assertRevert(
+    //     this.CrowdsaleExchangeToken.buyTokensExchange(beneficiary, 0)
+    //   );
+    // });
+    // it('should accept payments with buyTokens', async function () {
+    //   let beforeEx  = await _token.balanceOf(purchaser);
+    //   console.log(beforeEx);
+    //   await this.CrowdsaleExchangeToken.buyTokens(purchaser, { value: value, from: purchaser }).should.be.fulfilled;
+    //   let afterEX   = await _token.balanceOf(purchaser);
+    //   console.log(afterEX);
+    // });
+    it('should accep payments with buyTokensExchange', async function() {
+
+      let beforeEx  = await _token.balanceOf(purchaser); // check PAT
       console.log(beforeEx);
-      this.CrowdsaleExchangeToken.buyTokensExchange(beneficiary, 500).should.be.fulfilled;
-      let afterEX   = await _token.balanceOf(beneficiary);
-      console.log(afterEX);
+      // await token.approve(purchaser, amount, {from: investor}).should.be.fulfilled;
+      //       await token.transferFrom(investor, purchaser, amount, {from: purchaser}).should.be.fulfilled;
+
+      // token.transferFrom(msg.sender , wallet , _amount);
+      var z = await contractInstance.balanceOf(owner);
+      console.log(z);
+      await contractInstance.approve(purchaser, 500, {from: contract});
+      // await contractInstance.transferFrom(owner, purchaser, 500, {from: purchaser});
+      await this.CrowdsaleExchangeToken.buyTokensExchange(purchaser, 500 ).should.be.fulfilled;
+      var az = await contractInstance.balanceOf(purchaser);
+      console.log(az);
     });
   });
-  describe('buyToken', async function (){
-    beforeEach(async function(){
-      _token = await PATToken.new(tokenName, tokenSymbol, fixedLinkDoc, varLinkDoc, systemWallet); //this.token = await SimpleToken.new();
-
-      this.crowdsale = await crowdsale.new(rate, wallet , this._token.address);  //  this.crowdsale = await Crowdsale.new(rate, wallet, this.token.address);
-
-      balanceSheet = await BalanceSheet.new();
-      registry = await Registry.new();
-      await balanceSheet.transferOwnership(_token.address).should.be.fulfilled;
-      await registry.setAttribute(this.crowdsale.address, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
-      await _token.setBalanceSheet(balanceSheet.address).should.be.fulfilled;
-      await _token.setRegistry(registry.address).should.be.fulfilled;
-      await _token.mint(this.crowdsale.address, tokenSupply);
-      console.log(this.crowdsale.address);
-      let test = await _token.balanceOf(this.crowdsale.address);
-      console.log(test);
-    });
-    it('should accept payments', async function () {
-      await this.crowdsale.buyTokens(beneficiary, {value: value, from: purchaser });
-    });
-  })
 })

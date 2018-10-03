@@ -48,41 +48,36 @@ contract('Crowdsale', function (accounts) {
       beforeEach(async function () {
         // await this.token.transfer(this.crowdsale.address, tokenSupply)
         // this.crowdsale = await crowdsale.new(rate, wallet , contractAddress);
+
         _token = await PATToken.new(tokenName, tokenSymbol, fixedLinkDoc, varLinkDoc, systemWallet);
         balanceSheet = await BalanceSheet.new();
         registry = await Registry.new();
         await balanceSheet.transferOwnership(_token.address).should.be.fulfilled;
-
         await registry.setAttribute(acountB, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
-
         await registry.setAttribute(acountB, 4, "NO_FEE").should.be.fulfilled;
         await registry.setAttribute(purchaser, 4, "NO_FEE").should.be.fulfilled;
-
         (await registry.hasAttribute(acountB, regAtt.IS_BLACKLISTED)).should.equal(false);
         (await registry.hasAttribute(purchaser, regAtt.IS_BLACKLISTED)).should.equal(false);
         await registry.setAttribute(purchaser, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
-
         await _token.setBalanceSheet(balanceSheet.address).should.be.fulfilled;
         await _token.setRegistry(registry.address).should.be.fulfilled;
+
+
         this.crowdsale = await Crowdsale.new(rate, wallet, _token.address);
         (await registry.hasAttribute(this.crowdsale.address, regAtt.IS_BLACKLISTED)).should.equal(false);
-        (await registry.hasAttribute(this.crowdsale.address, regAtt.IS_BLACKLISTED)).should.equal(false);
-        await registry.setAttribute(this.crowdsale.address, 4, "NO_FEE").should.be.fulfilled;
         await registry.setAttribute(this.crowdsale.address, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
-        // console.log(1)
         await _token.mint(this.crowdsale.address, tokenSupply);
         let test = await _token.balanceOf(this.crowdsale.address);
-        // console.log(test);
         await registry.setAttribute(acountB, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
       });
-
-
 
         describe('buyTokens', function () {
           it('should accept payments', async function () {
             var pre = await _token.balanceOf(purchaser);
-            await this.crowdsale.buyTokens(purchaser, { value: value, from: purchaser });
+            console.log(pre);
+            await this.crowdsale.buyTokens(purchaser, { value: value, from: purchaser }).should.be.fulfilled;
             var post = await _token.balanceOf(purchaser);
+            console.log(post);
             post.minus(pre).should.be.bignumber.equal(value);
           });
           it('requires a non-null token', async function () {
