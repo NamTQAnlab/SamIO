@@ -236,10 +236,10 @@ contract StandardToken is ClaimableEx, NoOwnerEx, ERC20 {
 
   function _transfer(address _from, address _to, uint256 _value) internal {
     require(_to != address(0), "to address cannot be 0x0");
-    require(_from != address(0),"from address cannot be 0x0");
-    require(_value <= balanceOf(_from), "not enough balance to transfer");
+     require(_from != address(0),"from address cannot be 0x0");
+     require(_value <= balanceOf(_from), "not enough balance to transfer");
 
-    // SafeMath.sub will throw if there is not enough balance.
+    /* SafeMath.sub will throw if there is not enough balance. */
     balances.subBalance(_from, _value);
     balances.addBalance(_to, _value);
 

@@ -29,7 +29,6 @@ contract CrowdsaleExchangeToken is Crowdsale{
       _preValidatePurchase(_beneficiary, _amount);
 
       uint256 tokenAmount = _getTokenAmount(_amount); // getToekenAmount is fucntion check rates and return rate*amount
-      /* uint256 tokenAmount = 50; */
       _processPurchase(_beneficiary, tokenAmount); // token Amount will send to _beneficiary address
 
       /* token.transferFrom(_beneficiary, address(token), _amount);
@@ -40,6 +39,6 @@ contract CrowdsaleExchangeToken is Crowdsale{
         _beneficiary,
        _amount
         );
-      wallet.transfer(_amount);
+      /* wallet.transfer(_amount); */
       }
     }
