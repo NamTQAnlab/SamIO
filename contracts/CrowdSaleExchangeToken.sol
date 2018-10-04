@@ -8,14 +8,20 @@ import "./zeppelin/contracts/crowdsale/Crowdsale.sol";
 */
 contract CrowdsaleExchangeToken is Crowdsale{
 
-  constructor(uint256 _rate, address _wallet, ERC20 _tokenExchange) Crowdsale(_rate, _wallet, _tokenExchange) public {
+    ERC20 public PAT;
+    ERC20 public RAX;
+
+    uint256 _amount ;
+  constructor(uint256 _rate, address _wallet, ERC20 _tokenExchange, ERC20 RAXtoken) Crowdsale(_rate, _wallet, _tokenExchange) public {
     require(_rate > 0);
     require(_wallet != address(0));
     require(_tokenExchange != address(0));
     rate = _rate;
     wallet = _wallet;
-    token = _tokenExchange;
+    PAT = _tokenExchange;
+    RAX = RAXtoken;
   }
+
 
   event TokenExchange(
     address indexed purchaser,
@@ -24,10 +30,13 @@ contract CrowdsaleExchangeToken is Crowdsale{
     uint256 amount
     );
 
-    function buyTokensExchange(address _beneficiary, uint256 _amount) public {  // this function use if purchaser want to buy PAT token by RAX tokens
+    function buyTokensExchange(address _beneficiary) public {  // this function use if purchaser want to buy PAT token by RAX tokens
+       _amount = RAX.allowance(msg.sender, address(this));
+
       _preValidatePurchase(_beneficiary, _amount);
 
-      token.(msg.sender , wallet , _amount);
+
+      RAX.transferFrom( msg.sender, wallet , _amount);
 
       uint256 tokenAmount = _getTokenAmount(_amount); // getToekenAmount is fucntion check rates and return rate*amount
       _processPurchase(_beneficiary, tokenAmount); // token Amount will send to _beneficiary address
@@ -37,6 +46,5 @@ contract CrowdsaleExchangeToken is Crowdsale{
         _beneficiary,
        _amount
         );
-      /* wallet.transfer(_amount); */
       }
     }

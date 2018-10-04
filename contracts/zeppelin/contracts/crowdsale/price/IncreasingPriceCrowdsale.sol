@@ -26,7 +26,6 @@ contract IncreasingPriceCrowdsale is TimedCrowdsale {
     initialRate = _initialRate;
     finalRate = _finalRate;
   }
-
   /**
    * @dev Returns the rate of tokens per wei at the present time.
    * Note that, as price _increases_ with time, the rate _decreases_.
@@ -39,7 +38,6 @@ contract IncreasingPriceCrowdsale is TimedCrowdsale {
     uint256 rateRange = initialRate.sub(finalRate);
     return initialRate.sub(elapsedTime.mul(rateRange).div(timeRange));
   }
-
   /**
    * @dev Overrides parent method taking into account variable rate.
    * @param _weiAmount The value in wei to be converted into tokens
@@ -51,5 +49,4 @@ contract IncreasingPriceCrowdsale is TimedCrowdsale {
     uint256 currentRate = getCurrentRate();
     return currentRate.mul(_weiAmount);
   }
-
 }
