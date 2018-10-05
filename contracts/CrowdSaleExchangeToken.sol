@@ -1,5 +1,5 @@
 import "./zeppelin/contracts/crowdsale/Crowdsale.sol";
-
+import "./zeppelin/contracts/crowdsale/price/IncreasingPriceCrowdsale.sol";
 /*
 **_beneficiary is address of purchaser
 **ERC20 _tokenExchange using for the furture if any token can exchage with PAT token
@@ -8,18 +8,17 @@ import "./zeppelin/contracts/crowdsale/Crowdsale.sol";
 */
 contract CrowdsaleExchangeToken is Crowdsale{
 
-    ERC20 public PAT;
-    ERC20 public RAX;
-
-    uint256 _amount ;
-  constructor(uint256 _rate, address _wallet, ERC20 _tokenExchange, ERC20 RAXtoken) Crowdsale(_rate, _wallet, _tokenExchange) public {
+  ERC20 public PAT;
+  ERC20 public RAX;
+  uint256 _amount ;
+  constructor(uint256 _rate, address _wallet, ERC20 _tokenExchange, ERC20 _RAXtoken) Crowdsale(_rate, _wallet, _tokenExchange) public {
     require(_rate > 0);
     require(_wallet != address(0));
     require(_tokenExchange != address(0));
     rate = _rate;
     wallet = _wallet;
     PAT = _tokenExchange;
-    RAX = RAXtoken;
+    RAX = _RAXtoken;
   }
 
 
@@ -31,10 +30,9 @@ contract CrowdsaleExchangeToken is Crowdsale{
     );
 
     function buyTokensExchange(address _beneficiary) public {  // this function use if purchaser want to buy PAT token by RAX tokens
-       _amount = RAX.allowance(msg.sender, address(this));
+      _amount = RAX.allowance(msg.sender, address(this));
 
       _preValidatePurchase(_beneficiary, _amount);
-
 
       RAX.transferFrom( msg.sender, wallet , _amount);
 
@@ -44,7 +42,7 @@ contract CrowdsaleExchangeToken is Crowdsale{
       emit TokenExchange (
         msg.sender,
         _beneficiary,
-       _amount
+        _amount
         );
       }
     }
