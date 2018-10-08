@@ -32,7 +32,7 @@ contract('CrowdsaleExchangeToken', function(accounts){
   const rate = new BigNumber(1);
   const value = ether(2);
   const expectedTokenAmount = rate.mul(value);
-  var contractAddress = '0x37c30651bb88f08e76ab93fd2aa64328e058f675'; //because  we call from ABI so please change new address of token before run this test
+  var contractAddress = '0x0dc3db9caddf4c47065b728ee289c3d497e41663'; //because  we call from ABI so please change new address of token before run this test
   const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
   web3.eth.defaultAccount = owner;
   if (typeof web3 !== 'undefined') {
