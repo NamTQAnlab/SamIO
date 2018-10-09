@@ -8,6 +8,7 @@ var fs = require('fs');
 var path = require('path');
 const BigNumber = web3.BigNumber;
 const bn = require('./helpers/bignumber.js');
+const time = require('./helpers/timer.js');
 const should = require('chai')
 .use(require('chai-as-promised'))
 .use(require('chai-bignumber')(BigNumber))
@@ -16,8 +17,9 @@ const amount      = bn.tokens(1000);
 const PATToken               = artifacts.require("./PATToken.sol");
 const CrowdsaleExchangeToken = artifacts.require("./CrowdsaleExchangeToken.sol");
 const Crowdsale              = artifacts.require('./Crowdsale.sol');
+// const { advanceBlock } = require('../helpers/advanceToBlock');
 
-
+// const { EVMRevert } = require('../helpers/EVMRevert');
 const BalanceSheet = artifacts.require("./BalanceSheet.sol");
 const Registry = artifacts.require('./Registry.sol')
 const regAtt = require('./helpers/registryAttributeConst.js');
@@ -49,6 +51,10 @@ contract('CrowdsaleExchangeToken', function(accounts){
   var systemWallet = accounts[7]
   var acountB      = accounts[8]
   var CroExToken ;
+  var openingTime;
+  var closingTime;
+  var afterClosingTime;
+  var goal =  bn.tokens(100);
   var registry;
   var balanceSheet;
   var _token;
@@ -66,26 +72,40 @@ contract('CrowdsaleExchangeToken', function(accounts){
     });
   });
   describe('mint for crowdsale exchange token', async function(){
-    it('should be mint', async function(){
-      _token = await PATToken.new(tokenName, tokenSymbol, fixedLinkDoc, varLinkDoc, systemWallet);
-      balanceSheet = await BalanceSheet.new();
-      registry = await Registry.new();
-      await balanceSheet.transferOwnership(_token.address).should.be.fulfilled;
-      await _token.setBalanceSheet(balanceSheet.address).should.be.fulfilled;
-      await _token.setRegistry(registry.address).should.be.fulfilled;
-      CroExToken = await CrowdsaleExchangeToken.new(rate, wallet ,_token.address, contractAddress);
-      // await registry.setAttribute(CroExToken, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
-      await _token.mint(CroExToken.address, tokenSupply);
-      console.log("1111");
+    beforeEach(async function(){
+      openingTime = (await time.latest()) + time.duration.weeks(1);
+      closingTime = openingTime + time.duration.weeks(1);
+      afterClosingTime = this.closingTime + time.duration.seconds(1);
     });
+
+    // it('should be mint', async function(){
+    //   _token = await PATToken.new(tokenName, tokenSymbol, fixedLinkDoc, varLinkDoc, systemWallet);
+    //   balanceSheet = await BalanceSheet.new();
+    //   registry = await Registry.new();
+    //   await balanceSheet.transferOwnership(_token.address).should.be.fulfilled;
+    //   await _token.setBalanceSheet(balanceSheet.address).should.be.fulfilled;
+    //   await _token.setRegistry(registry.address).should.be.fulfilled;
+    //   console.log(332423);
+    //   CroExToken = await CrowdsaleExchangeToken.new(rate, wallet ,_token.address, contractAddress , goal , openingTime, closingTime); // pleasse check blocktimeStem before add opening and closing time
+    //   await registry.setAttribute(CroExToken.address, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
+    //   await _token.mint(CroExToken.address, tokenSupply);
+    //   let abc = _token.balanceOf(CroExToken.address);
+    //   console.log(abc);
+    // });
   });
   describe('buyTokensExchange', async function(){
     beforeEach(async function(){
+
+      openingTime = (await time.latest()) + time.duration.weeks(1); // set openingTime and closingTime
+      closingTime = openingTime + time.duration.weeks(1);
+      afterClosingTime = this.closingTime + time.duration.seconds(1);
+
+
       await contractInstance.mint(owner, amount, {from: owner}); // RAX
       await contractInstance.mint(purchaser, amount, {from: owner});
       await contractInstance.transfer(purchaser, 100, {from: owner});
       let AfterBalan = await contractInstance.balanceOf(purchaser);
-      // console.log(AfterBalan);
+      console.log(AfterBalan);
 
       _token = await PATToken.new(tokenName, tokenSymbol, fixedLinkDoc, varLinkDoc, systemWallet);
       balanceSheet = await BalanceSheet.new();
@@ -96,27 +116,21 @@ contract('CrowdsaleExchangeToken', function(accounts){
       await registry.setAttribute(purchaser, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
       await _token.setBalanceSheet(balanceSheet.address).should.be.fulfilled;
       await _token.setRegistry(registry.address).should.be.fulfilled;
-      
-      CroExToken = await CrowdsaleExchangeToken.new(rate, wallet ,_token.address, contractAddress);
+
+      CroExToken = await CrowdsaleExchangeToken.new(rate, wallet ,_token.address, contractAddress , goal , openingTime, closingTime);
       (await registry.hasAttribute(CroExToken.address, regAtt.IS_BLACKLISTED)).should.equal(false);
       await registry.setAttribute(CroExToken.address, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
       await _token.mint(CroExToken.address, tokenSupply);
-    });
 
-    it('should accept payments with buyTokens', async function () {
-      let beforeEx  = await _token.balanceOf(purchaser);
-      console.log(beforeEx);
-      await CroExToken.buyTokens(purchaser, { value: value, from: purchaser }).should.be.fulfilled;
-      let afterEX   = await _token.balanceOf(purchaser);
-      console.log(afterEX);
+      let abc = await _token.balanceOf(CroExToken.address);
+      console.log(abc);
     });
     it('should accep payments with buyTokensExchange', async function() {
-
       let beforeEx  = await _token.balanceOf(purchaser); // check PAT
       var z = await contractInstance.balanceOf(owner);
       await contractInstance.approve(CroExToken.address, amount, {from: purchaser});
       let allowance = await contractInstance.allowance(purchaser, CroExToken.address, {from: purchaser});
-      await CroExToken.buyTokensExchange(purchaser,{from: purchaser}).should.be.fulfilled;
+      await CroExToken.buyTokensExchange(purchaser,{from: purchaser}).should.be.rejected;
     });
   });
 })

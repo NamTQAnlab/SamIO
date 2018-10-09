@@ -37,7 +37,6 @@ contract EscrowEx is Ownable {
   function depositEx(address _payee , uint256 amount) public onlyOwner {
       // transfer token
     _token.safeTransfer(address(this), amount);
-
     depositsEx[_payee] = depositsEx[_payee].add(amount);
 
     emit Deposited(_payee, amount);

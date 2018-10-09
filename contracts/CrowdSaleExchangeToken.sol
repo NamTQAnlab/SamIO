@@ -12,7 +12,10 @@ contract CrowdsaleExchangeToken is Crowdsale, RefundableCrowdsaleEx{
   ERC20 public PAT;
   ERC20 public RAX;
   uint256 _amount ;
-  constructor(uint256 _rate, address _wallet, ERC20 _tokenExchange, ERC20 _RAXtoken) Crowdsale(_rate, _wallet, _tokenExchange) public {
+  constructor(uint256 _rate, address _wallet, ERC20 _tokenExchange, ERC20 _RAXtoken ,uint256 _goal, uint256 _openingTime, uint256 _closingTime )
+  Crowdsale(_rate, _wallet, _tokenExchange)
+  RefundableCrowdsaleEx(_goal)
+  TimedCrowdsale( _openingTime, _closingTime) public {
     require(_rate > 0);
     require(_wallet != address(0));
     require(_tokenExchange != address(0));
@@ -21,6 +24,7 @@ contract CrowdsaleExchangeToken is Crowdsale, RefundableCrowdsaleEx{
     PAT = _tokenExchange;
     RAX = _RAXtoken;
   }
+
 
   event TokenExchange(
     address indexed purchaser,
@@ -44,8 +48,8 @@ contract CrowdsaleExchangeToken is Crowdsale, RefundableCrowdsaleEx{
         msg.sender,
         _beneficiary,
         _amount
-        );
-        _forwardFundsToken(_amount);
-      }
-
+      );
+      _forwardFundsToken(_amount);
     }
+
+}
