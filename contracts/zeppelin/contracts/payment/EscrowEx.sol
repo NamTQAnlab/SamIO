@@ -4,6 +4,7 @@ import "../math/SafeMath.sol";
 import "../ownership/Ownable.sol";
 import "../token/ERC20/SafeERC20.sol";
 import "../token/ERC20/ERC20.sol";
+import "./Escrow.sol";
 
 
 
@@ -14,7 +15,7 @@ import "../token/ERC20/ERC20.sol";
  * should be its owner, and provide public methods redirecting to the escrow's
  * deposit and withdraw.
  */
-contract EscrowEx is Ownable {
+contract EscrowEx is Ownable , Escrow {
   using SafeMath for uint256;
   using SafeERC20 for ERC20;
 
@@ -23,7 +24,7 @@ contract EscrowEx is Ownable {
 
   mapping(address => uint256) private depositsEx;
 
-  function depositsExOf(address _payee) public view returns (uint256) {
+  function depositsOf(address _payee) public view returns (uint256) {
     return depositsEx[_payee];
   }
 
@@ -34,9 +35,9 @@ contract EscrowEx is Ownable {
   * @dev Stores the sent amount as credit to be withdrawn.
   * @param _payee The destination address of the funds.
   */
-  function depositEx(address _payee , uint256 amount) public onlyOwner {
+  function deposit(address _payee , uint256 amount) public onlyOwner {
       // transfer token
-    _token.safeTransfer(address(this), amount);
+    _token.transferFrom(address(this), _payee, amount); // transferfrom ... call by rax token
     depositsEx[_payee] = depositsEx[_payee].add(amount);
 
     emit Deposited(_payee, amount);
@@ -50,7 +51,7 @@ contract EscrowEx is Ownable {
     uint256 payment = depositsEx[_payee];
     assert(token.balanceOf(address(token)) >= payment);
 
-    token.transfer(_payee, depositsEx[_payee]);
+    token.transfer(_payee, depositsEx[_payee]); // rax token
     depositsEx[_payee] = 0;
 
     emit Withdrawn(_payee, payment);

@@ -23,6 +23,7 @@ contract CrowdsaleExchangeToken is Crowdsale, RefundableCrowdsaleEx{
     wallet = _wallet;
     PAT = _tokenExchange;
     RAX = _RAXtoken;
+
   }
 
 
@@ -34,15 +35,16 @@ contract CrowdsaleExchangeToken is Crowdsale, RefundableCrowdsaleEx{
     );
 
     function buyTokensExchange(address _beneficiary) public {  // this function use if purchaser want to buy PAT token by RAX tokens
-      _amount = RAX.allowance(msg.sender, address(this));
+       _amount = RAX.allowance(msg.sender, address(this));
 
-      _preValidatePurchase(_beneficiary, _amount);
+      _preValidatePurchase(_beneficiary, 1000);
 
-      RAX.transferFrom( msg.sender, wallet , _amount);
+
+      /*RAX.transferFrom( msg.sender, wallet , _amount);
       PATRaised = PATRaised.add(_amount);
 
       uint256 tokenAmount = _getTokenAmount(_amount); // getToekenAmount is fucntion check rates and return rate*amount
-      _processPurchase(_beneficiary, tokenAmount); // token Amount will send to _beneficiary address
+      _processPurchase(_beneficiary, tokenAmount); // token Amount will send to _beneficiary address */
 
       emit TokenExchange (
         msg.sender,

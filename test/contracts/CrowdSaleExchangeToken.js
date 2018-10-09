@@ -77,7 +77,6 @@ contract('CrowdsaleExchangeToken', function(accounts){
       closingTime = openingTime + time.duration.weeks(1);
       afterClosingTime = this.closingTime + time.duration.seconds(1);
     });
-
     // it('should be mint', async function(){
     //   _token = await PATToken.new(tokenName, tokenSymbol, fixedLinkDoc, varLinkDoc, systemWallet);
     //   balanceSheet = await BalanceSheet.new();
@@ -105,7 +104,7 @@ contract('CrowdsaleExchangeToken', function(accounts){
       await contractInstance.mint(purchaser, amount, {from: owner});
       await contractInstance.transfer(purchaser, 100, {from: owner});
       let AfterBalan = await contractInstance.balanceOf(purchaser);
-      console.log(AfterBalan);
+      // console.log(AfterBalan);
 
       _token = await PATToken.new(tokenName, tokenSymbol, fixedLinkDoc, varLinkDoc, systemWallet);
       balanceSheet = await BalanceSheet.new();
@@ -125,12 +124,15 @@ contract('CrowdsaleExchangeToken', function(accounts){
       let abc = await _token.balanceOf(CroExToken.address);
       console.log(abc);
     });
+
     it('should accep payments with buyTokensExchange', async function() {
       let beforeEx  = await _token.balanceOf(purchaser); // check PAT
       var z = await contractInstance.balanceOf(owner);
       await contractInstance.approve(CroExToken.address, amount, {from: purchaser});
       let allowance = await contractInstance.allowance(purchaser, CroExToken.address, {from: purchaser});
-      await CroExToken.buyTokensExchange(purchaser,{from: purchaser}).should.be.rejected;
+      console.log(allowance);
+      await CroExToken.buyTokensExchange(purchaser,{from: purchaser}).should.be.fulfilled;
+      console.log(3333);
     });
   });
 })

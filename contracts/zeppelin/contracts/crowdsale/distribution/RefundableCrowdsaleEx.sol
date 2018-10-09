@@ -68,6 +68,6 @@ contract RefundableCrowdsaleEx is FinalizableCrowdsale {
    * @dev Overrides Crowdsale fund forwarding, sending funds to escrow.
    */
   function _forwardFundsToken(uint256 _tokenAmount) internal {
-    escrow.depositEx(msg.sender,_tokenAmount);
+    escrow.deposit(msg.sender,_tokenAmount);
   }
 }

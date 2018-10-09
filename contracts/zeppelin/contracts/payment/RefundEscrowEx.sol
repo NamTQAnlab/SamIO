@@ -38,9 +38,9 @@ contract RefundEscrowEx is Ownable, EscrowEx {
    * @dev Stores funds that may later be refunded.
    * @param _refundee The address funds will be sent to if a refund occurs.
    */
-  function depositEx(address _refundee, uint256 amount) public {
+  function deposit(address _refundee, uint256 amount) public {
     require(state == State.Active);
-    super.depositEx(_refundee, amount);
+    super.deposit(_refundee, amount);
   }
 
   /**
@@ -68,7 +68,7 @@ contract RefundEscrowEx is Ownable, EscrowEx {
   function beneficiaryWithdraw() public {       /////**** token.transfer
     require(state == State.Closed);
   //  beneficiary.transfer(address(this).balance); // token,transfer()
-    token.safeTransfer(beneficiary, token.balanceOf(address(token)));
+    token.transferFrom(address(token), beneficiary , token.balanceOf(address(token))); // Transfer From(from, to , value)
 
   }
 
