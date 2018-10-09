@@ -66,41 +66,38 @@ contract('CrowdsaleExchangeToken', function(accounts){
     });
   });
   describe('mint for crowdsale exchange token', async function(){
-    // it('should be mint', async function(){
-    //   _token = await PATToken.new(tokenName, tokenSymbol, fixedLinkDoc, varLinkDoc, systemWallet);
-    //   balanceSheet = await BalanceSheet.new();
-    //   registry = await Registry.new();
-    //   await balanceSheet.transferOwnership(_token.address).should.be.fulfilled;
-    //   await _token.setBalanceSheet(balanceSheet.address).should.be.fulfilled;
-    //   await _token.setRegistry(registry.address).should.be.fulfilled;
-    //   CroExToken = await CrowdsaleExchangeToken.new(rate, wallet ,_token.address, contractAddress);
-    //   await registry.setAttribute(CroExToken, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
-    //   await _token.mint(CroExToken.address, tokenSupply);
-    //   console.log("1111");
-    // });
+    it('should be mint', async function(){
+      _token = await PATToken.new(tokenName, tokenSymbol, fixedLinkDoc, varLinkDoc, systemWallet);
+      balanceSheet = await BalanceSheet.new();
+      registry = await Registry.new();
+      await balanceSheet.transferOwnership(_token.address).should.be.fulfilled;
+      await _token.setBalanceSheet(balanceSheet.address).should.be.fulfilled;
+      await _token.setRegistry(registry.address).should.be.fulfilled;
+      CroExToken = await CrowdsaleExchangeToken.new(rate, wallet ,_token.address, contractAddress);
+      // await registry.setAttribute(CroExToken, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
+      await _token.mint(CroExToken.address, tokenSupply);
+      console.log("1111");
+    });
   });
   describe('buyTokensExchange', async function(){
     beforeEach(async function(){
-
       await contractInstance.mint(owner, amount, {from: owner}); // RAX
       await contractInstance.mint(purchaser, amount, {from: owner});
       await contractInstance.transfer(purchaser, 100, {from: owner});
       let AfterBalan = await contractInstance.balanceOf(purchaser);
-      console.log(AfterBalan);
+      // console.log(AfterBalan);
 
       _token = await PATToken.new(tokenName, tokenSymbol, fixedLinkDoc, varLinkDoc, systemWallet);
       balanceSheet = await BalanceSheet.new();
       registry = await Registry.new();
-
       await balanceSheet.transferOwnership(_token.address).should.be.fulfilled;
       await registry.setAttribute(purchaser, 4, "NO_FEE").should.be.fulfilled;
       (await registry.hasAttribute(purchaser, regAtt.IS_BLACKLISTED)).should.equal(false);
       await registry.setAttribute(purchaser, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
       await _token.setBalanceSheet(balanceSheet.address).should.be.fulfilled;
       await _token.setRegistry(registry.address).should.be.fulfilled;
-
-      CroExToken = await CrowdsaleExchangeToken.new(rate, wallet, _token.address ,contractAddress);
-
+      
+      CroExToken = await CrowdsaleExchangeToken.new(rate, wallet ,_token.address, contractAddress);
       (await registry.hasAttribute(CroExToken.address, regAtt.IS_BLACKLISTED)).should.equal(false);
       await registry.setAttribute(CroExToken.address, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
       await _token.mint(CroExToken.address, tokenSupply);

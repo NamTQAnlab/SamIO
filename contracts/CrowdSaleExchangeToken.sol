@@ -13,6 +13,11 @@ contract CrowdsaleExchangeToken is Crowdsale, RefundableCrowdsaleEx{
   ERC20 public RAX;
   uint256 _amount ;
   constructor(uint256 _rate, address _wallet, ERC20 _tokenExchange, ERC20 _RAXtoken) Crowdsale(_rate, _wallet, _tokenExchange) public {
+    require(_rate > 0);
+    require(_wallet != address(0));
+    require(_tokenExchange != address(0));
+    rate = _rate;
+    wallet = _wallet;
     PAT = _tokenExchange;
     RAX = _RAXtoken;
   }

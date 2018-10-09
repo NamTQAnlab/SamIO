@@ -27,11 +27,17 @@ contract EscrowEx is Ownable {
     return depositsEx[_payee];
   }
 
+
+  ERC20 _token;
+
   /**
   * @dev Stores the sent amount as credit to be withdrawn.
   * @param _payee The destination address of the funds.
   */
   function depositEx(address _payee , uint256 amount) public onlyOwner {
+      // transfer token
+    _token.safeTransfer(address(this), amount);
+
     depositsEx[_payee] = depositsEx[_payee].add(amount);
 
     emit Deposited(_payee, amount);

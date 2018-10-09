@@ -2,7 +2,7 @@ pragma solidity ^0.4.23;
 
 import "./EscrowEx.sol";
 import "../ownership/Ownable.sol";
-
+import "../token/ERC20/SafeERC20.sol";
 
 /**
  * @title RefundEscrow
@@ -15,8 +15,11 @@ contract RefundEscrowEx is Ownable, EscrowEx {
 
   event Closed();
   event RefundsEnabled();
+  using SafeERC20 for ERC20;
 
 
+
+  ERC20 token;
   State public state;
   address public beneficiary;
 
@@ -62,9 +65,11 @@ contract RefundEscrowEx is Ownable, EscrowEx {
   /**
    * @dev Withdraws the beneficiary's funds.
    */
-  function beneficiaryWithdraw() public {
+  function beneficiaryWithdraw() public {       /////**** token.transfer
     require(state == State.Closed);
-    beneficiary.transfer(address(this).balance);
+  //  beneficiary.transfer(address(this).balance); // token,transfer()
+    token.safeTransfer(beneficiary, token.balanceOf(address(token)));
+
   }
 
   /**
@@ -73,7 +78,7 @@ contract RefundEscrowEx is Ownable, EscrowEx {
   function withdrawalAllowed(address _payee) public view returns (bool) {
     return state == State.Refunding;
   }
-  function withdraw(address _payee) public {
+  function withdraw(address _payee) public {//**
     require(withdrawalAllowed(_payee));
     withdraw(_payee);
   }
