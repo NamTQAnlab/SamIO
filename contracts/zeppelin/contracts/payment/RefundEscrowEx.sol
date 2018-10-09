@@ -35,9 +35,9 @@ contract RefundEscrowEx is Ownable, EscrowEx {
    * @dev Stores funds that may later be refunded.
    * @param _refundee The address funds will be sent to if a refund occurs.
    */
-  function depositEx(address _refundee) public  {
+  function depositEx(address _refundee, uint256 amount) public {
     require(state == State.Active);
-    depositEx(_refundee);
+    super.depositEx(_refundee, amount);
   }
 
   /**

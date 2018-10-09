@@ -43,10 +43,9 @@ contract EscrowEx is Ownable {
   */
   function withdraw(ERC20 token, address _payee) public onlyOwner {
     uint256 payment = depositsEx[_payee];
-    assert(address(this).balance >= payment);
+    assert(token.balanceOf(address(token)) >= payment);
 
     token.transfer(_payee, depositsEx[_payee]);
-
     depositsEx[_payee] = 0;
 
     emit Withdrawn(_payee, payment);

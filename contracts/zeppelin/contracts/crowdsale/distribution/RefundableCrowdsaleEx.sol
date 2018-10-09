@@ -20,7 +20,7 @@ contract RefundableCrowdsaleEx is FinalizableCrowdsale {
   // refund escrow used to hold funds while crowdsale is running
   RefundEscrowEx private escrow;
 
-  uint256 _tokenAmount;
+
 
   /**
    * @dev Constructor, creates RefundEscrow.
@@ -67,7 +67,7 @@ contract RefundableCrowdsaleEx is FinalizableCrowdsale {
   /**
    * @dev Overrides Crowdsale fund forwarding, sending funds to escrow.
    */
-  function _forwardFundsToken() internal {
+  function _forwardFundsToken(uint256 _tokenAmount) internal {
     escrow.depositEx(msg.sender,_tokenAmount);
   }
 }
