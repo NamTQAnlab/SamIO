@@ -73,7 +73,7 @@ contract IndividuallyCappedCrowdsale is Ownable, Crowdsale {
     internal
   {
     super._preValidatePurchase(_beneficiary, _weiAmount);
-    /* require(contributions[_beneficiary].add(_weiAmount) <= caps[_beneficiary]); */
+    require(contributions[_beneficiary].add(_weiAmount) <= caps[_beneficiary]);
   }
 
   /**

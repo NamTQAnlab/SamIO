@@ -13,9 +13,9 @@ contract CrowdsaleExchangeToken is Crowdsale, RefundableCrowdsaleEx{
   ERC20 public RAX;
   uint256 _amount ;
   constructor(uint256 _rate, address _wallet, ERC20 _tokenExchange, ERC20 _RAXtoken ,uint256 _goal, uint256 _openingTime, uint256 _closingTime )
-  Crowdsale(_rate, _wallet, _tokenExchange)
   RefundableCrowdsaleEx(_goal)
-  TimedCrowdsale( _openingTime, _closingTime) public {
+  TimedCrowdsale( _openingTime, _closingTime)
+  Crowdsale(_rate, _wallet, _tokenExchange) public {
     require(_rate > 0);
     require(_wallet != address(0));
     require(_tokenExchange != address(0));
@@ -23,10 +23,7 @@ contract CrowdsaleExchangeToken is Crowdsale, RefundableCrowdsaleEx{
     wallet = _wallet;
     PAT = _tokenExchange;
     RAX = _RAXtoken;
-
   }
-
-
   event TokenExchange(
     address indexed purchaser,
     address indexed beneficiary,
@@ -35,23 +32,22 @@ contract CrowdsaleExchangeToken is Crowdsale, RefundableCrowdsaleEx{
     );
 
     function buyTokensExchange(address _beneficiary) public {  // this function use if purchaser want to buy PAT token by RAX tokens
-       _amount = RAX.allowance(msg.sender, address(this));
+     _amount = RAX.allowance(msg.sender, address(this));
 
-      _preValidatePurchase(_beneficiary, 1000);
+     _preValidatePurchase(_beneficiary, 1000);
 
 
-      /*RAX.transferFrom( msg.sender, wallet , _amount);
-      PATRaised = PATRaised.add(_amount);
+      RAX.transferFrom( msg.sender, wallet , _amount);
+     PATRaised = PATRaised.add(_amount);
 
       uint256 tokenAmount = _getTokenAmount(_amount); // getToekenAmount is fucntion check rates and return rate*amount
-      _processPurchase(_beneficiary, tokenAmount); // token Amount will send to _beneficiary address */
+       _processPurchase(_beneficiary, tokenAmount); // token Amount will send to _beneficiary address
 
       emit TokenExchange (
         msg.sender,
         _beneficiary,
         _amount
       );
-      _forwardFundsToken(_amount);
+      _forwardFundsToken(tokenAmount, RAX); 
     }
-
 }

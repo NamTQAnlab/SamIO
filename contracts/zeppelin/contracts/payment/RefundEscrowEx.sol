@@ -11,11 +11,12 @@ import "../token/ERC20/SafeERC20.sol";
  * by the beneficiary, or refunds to the depositors.
  */
 contract RefundEscrowEx is Ownable, EscrowEx {
-  enum State { Active, Refunding, Closed }
+  using SafeERC20 for ERC20;
 
+  enum State { Active, Refunding, Closed }
   event Closed();
   event RefundsEnabled();
-  using SafeERC20 for ERC20;
+
 
 
 
@@ -38,9 +39,9 @@ contract RefundEscrowEx is Ownable, EscrowEx {
    * @dev Stores funds that may later be refunded.
    * @param _refundee The address funds will be sent to if a refund occurs.
    */
-  function deposit(address _refundee, uint256 amount) public {
+  function deposit(address _refundee, uint256 amount, ERC20 _token) public {
     require(state == State.Active);
-    super.deposit(_refundee, amount);
+   super.deposit(_refundee, amount, _token);
   }
 
   /**
@@ -68,8 +69,7 @@ contract RefundEscrowEx is Ownable, EscrowEx {
   function beneficiaryWithdraw() public {       /////**** token.transfer
     require(state == State.Closed);
   //  beneficiary.transfer(address(this).balance); // token,transfer()
-    token.transferFrom(address(token), beneficiary , token.balanceOf(address(token))); // Transfer From(from, to , value)
-
+    token.transferFrom(address(token), beneficiary , token.balanceOf(address(token))); // Transfer From(from, to , value) // this is rax token
   }
 
   /**
@@ -78,7 +78,7 @@ contract RefundEscrowEx is Ownable, EscrowEx {
   function withdrawalAllowed(address _payee) public view returns (bool) {
     return state == State.Refunding;
   }
-  function withdraw(address _payee) public {//**
+  function withdraw(ERC20 _token , address _payee) public {//**
     require(withdrawalAllowed(_payee));
     withdraw(_payee);
   }

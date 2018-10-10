@@ -6,6 +6,7 @@ var Web3 = require('web3');
 // var web3js = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
 var fs = require('fs');
 var path = require('path');
+const expectEvent = require('./helpers/expectEvent');
 const BigNumber = web3.BigNumber;
 const bn = require('./helpers/bignumber.js');
 const time = require('./helpers/timer.js');
@@ -34,7 +35,7 @@ contract('CrowdsaleExchangeToken', function(accounts){
   const rate = new BigNumber(1);
   const value = ether(2);
   const expectedTokenAmount = rate.mul(value);
-  var contractAddress = '0x8b3b3c2eaa0527736522e4dedaf7f800345a86c0'; //because  we call from ABI so please change new address of token before run this test
+  var contractAddress = '0x5029db2f96ff398231a5b038b1e99775581e3593'; //because  we call from ABI so please change new address of token before run this test
   const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
   web3.eth.defaultAccount = owner;
   if (typeof web3 !== 'undefined') {
@@ -71,33 +72,13 @@ contract('CrowdsaleExchangeToken', function(accounts){
 
     });
   });
-  describe('mint for crowdsale exchange token', async function(){
-    beforeEach(async function(){
-      openingTime = (await time.latest()) + time.duration.weeks(1);
-      closingTime = openingTime + time.duration.weeks(1);
-      afterClosingTime = this.closingTime + time.duration.seconds(1);
-    });
-    // it('should be mint', async function(){
-    //   _token = await PATToken.new(tokenName, tokenSymbol, fixedLinkDoc, varLinkDoc, systemWallet);
-    //   balanceSheet = await BalanceSheet.new();
-    //   registry = await Registry.new();
-    //   await balanceSheet.transferOwnership(_token.address).should.be.fulfilled;
-    //   await _token.setBalanceSheet(balanceSheet.address).should.be.fulfilled;
-    //   await _token.setRegistry(registry.address).should.be.fulfilled;
-    //   console.log(332423);
-    //   CroExToken = await CrowdsaleExchangeToken.new(rate, wallet ,_token.address, contractAddress , goal , openingTime, closingTime); // pleasse check blocktimeStem before add opening and closing time
-    //   await registry.setAttribute(CroExToken.address, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
-    //   await _token.mint(CroExToken.address, tokenSupply);
-    //   let abc = _token.balanceOf(CroExToken.address);
-    //   console.log(abc);
-    // });
-  });
   describe('buyTokensExchange', async function(){
     beforeEach(async function(){
 
       openingTime = (await time.latest()) + time.duration.weeks(1); // set openingTime and closingTime
       closingTime = openingTime + time.duration.weeks(1);
       afterClosingTime = this.closingTime + time.duration.seconds(1);
+
 
 
       await contractInstance.mint(owner, amount, {from: owner}); // RAX
@@ -124,15 +105,19 @@ contract('CrowdsaleExchangeToken', function(accounts){
       let abc = await _token.balanceOf(CroExToken.address);
       console.log(abc);
     });
-
     it('should accep payments with buyTokensExchange', async function() {
       let beforeEx  = await _token.balanceOf(purchaser); // check PAT
       var z = await contractInstance.balanceOf(owner);
       await contractInstance.approve(CroExToken.address, amount, {from: purchaser});
       let allowance = await contractInstance.allowance(purchaser, CroExToken.address, {from: purchaser});
-      console.log(allowance);
       await CroExToken.buyTokensExchange(purchaser,{from: purchaser}).should.be.fulfilled;
-      console.log(3333);
+
+    });
+    it('should reject if amount equal 0 ', async function() {
+      let beforeEx  = await _token.balanceOf(purchaser);
+      await contractInstance.approve(CroExToken.address, 0, {from: purchaser});
+      let allowance = await contractInstance.allowance(purchaser, CroExToken.address, {from: purchaser});
+      await CroExToken.buyTokensExchange(beneficiary,{from: purchaser}).should.be.rejected;
     });
   });
 })
