@@ -32,6 +32,7 @@ contract CrowdsaleExchangeToken is Crowdsale, RefundableCrowdsaleEx{
     );
 
     function buyTokensExchange(address _beneficiary) public {  // this function use if purchaser want to buy PAT token by RAX tokens
+
      _amount = RAX.allowance(msg.sender, address(this));
 
      _preValidatePurchase(_beneficiary, 1000);
@@ -48,6 +49,6 @@ contract CrowdsaleExchangeToken is Crowdsale, RefundableCrowdsaleEx{
         _beneficiary,
         _amount
       );
-      _forwardFundsToken(tokenAmount, RAX); 
+      _forwardFundsToken(tokenAmount, RAX);
     }
 }

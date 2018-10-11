@@ -18,12 +18,15 @@ const amount      = bn.tokens(1000);
 const PATToken               = artifacts.require("./PATToken.sol");
 const CrowdsaleExchangeToken = artifacts.require("./CrowdsaleExchangeToken.sol");
 const Crowdsale              = artifacts.require('./Crowdsale.sol');
+const EscrowEx               = artifacts.require('./EscrowEx.sol')
+
 // const { advanceBlock } = require('../helpers/advanceToBlock');
 
 // const { EVMRevert } = require('../helpers/EVMRevert');
 const BalanceSheet = artifacts.require("./BalanceSheet.sol");
 const Registry = artifacts.require('./Registry.sol')
 const regAtt = require('./helpers/registryAttributeConst.js');
+
 
 contract('CrowdsaleExchangeToken', function(accounts){
   var CrowdSaleExchangeTokenContract ;
@@ -35,7 +38,7 @@ contract('CrowdsaleExchangeToken', function(accounts){
   const rate = new BigNumber(1);
   const value = ether(2);
   const expectedTokenAmount = rate.mul(value);
-  var contractAddress = '0x5029db2f96ff398231a5b038b1e99775581e3593'; //because  we call from ABI so please change new address of token before run this test
+  var contractAddress = '0x74ebbd75bc37c1600cdf080a877ac88b82b9c3c4'; //because  we call from ABI so please change new address of token before run this test
   const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
   web3.eth.defaultAccount = owner;
   if (typeof web3 !== 'undefined') {
@@ -97,25 +100,31 @@ contract('CrowdsaleExchangeToken', function(accounts){
       await _token.setBalanceSheet(balanceSheet.address).should.be.fulfilled;
       await _token.setRegistry(registry.address).should.be.fulfilled;
 
+
       CroExToken = await CrowdsaleExchangeToken.new(rate, wallet ,_token.address, contractAddress , goal , openingTime, closingTime);
       (await registry.hasAttribute(CroExToken.address, regAtt.IS_BLACKLISTED)).should.equal(false);
       await registry.setAttribute(CroExToken.address, regAtt.HAS_PASSED_KYC_AML, "Set HAS_PASSED_KYC_AML ON").should.be.fulfilled;
       await _token.mint(CroExToken.address, tokenSupply);
 
-      let abc = await _token.balanceOf(CroExToken.address);
-      console.log(abc);
+      this.EscrowEx = await EscrowEx.new();
+      await contractInstance.mint(this.EscrowEx.address, amount, {from: owner});
+
     });
     it('should accep payments with buyTokensExchange', async function() {
       let beforeEx  = await _token.balanceOf(purchaser); // check PAT
       var z = await contractInstance.balanceOf(owner);
+
       await contractInstance.approve(CroExToken.address, amount, {from: purchaser});
-      let allowance = await contractInstance.allowance(purchaser, CroExToken.address, {from: purchaser});
+      await contractInstance.approve(this.EscrowEx.address, amount , {from: purchaser}); //_token.transferFrom(address(this), _payee, amount); // transferfrom ... call by rax token
+      await contractInstance.allowance(purchaser, this.EscrowEx.address, {from: purchaser});
+      await contractInstance.allowance(CroExToken.address, purchaser,  {from: purchaser});
+      await contractInstance.balanceOf(this.EscrowEx.address);
       await CroExToken.buyTokensExchange(purchaser,{from: purchaser}).should.be.fulfilled;
 
     });
     it('should reject if amount equal 0 ', async function() {
       let beforeEx  = await _token.balanceOf(purchaser);
-      await contractInstance.approve(CroExToken.address, 0, {from: purchaser});
+      await contractInstance.approve(CroExToken.address, 0, {from: purchaser}); //RAX.transferFrom( msg.sender, wallet , _amount);
       let allowance = await contractInstance.allowance(purchaser, CroExToken.address, {from: purchaser});
       await CroExToken.buyTokensExchange(beneficiary,{from: purchaser}).should.be.rejected;
     });

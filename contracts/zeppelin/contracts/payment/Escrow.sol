@@ -31,7 +31,7 @@ contract Escrow is Ownable {
     uint256 amount = msg.value;
     deposits[_payee] = deposits[_payee].add(amount);
 
-    emit Deposited(_payee, amount);
+    emit Deposited(_payee, amount); // in here _payee se dc gan la 1 luong amount
   }
 
   /**
