@@ -1,24 +1,24 @@
 {
   "contractName": "Attribute",
   "abi": [],
-  "bytecode": "0x604c602c600b82828239805160001a60731460008114601c57601e565bfe5b5030600052607381538281f30073000000000000000000000000000000000000000030146080604052600080fd00a165627a7a72305820dc5e7a26be1ea9ac497592a38dc8c4bf75f1ac3b93b13b8e037b9a0dbaace0840029",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fd00a165627a7a72305820dc5e7a26be1ea9ac497592a38dc8c4bf75f1ac3b93b13b8e037b9a0dbaace0840029",
-  "sourceMap": "26:418:40:-;;132:2:-1;166:7;155:9;146:7;137:37;252:7;246:14;243:1;238:23;232:4;229:33;270:1;265:20;;;;222:63;;265:20;274:9;222:63;;298:9;295:1;288:20;328:4;319:7;311:22;352:7;343;336:24",
-  "deployedSourceMap": "26:418:40:-;;;;;;;;",
+  "bytecode": "0x604c602c600b82828239805160001a60731460008114601c57601e565bfe5b5030600052607381538281f30073000000000000000000000000000000000000000030146080604052600080fd00a165627a7a7230582082e32c90bfaa7c22f9e146405014c40ee6f5aa3f231913dbf53df2d74e3958920029",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fd00a165627a7a7230582082e32c90bfaa7c22f9e146405014c40ee6f5aa3f231913dbf53df2d74e3958920029",
+  "sourceMap": "26:418:27:-;;132:2:-1;166:7;155:9;146:7;137:37;252:7;246:14;243:1;238:23;232:4;229:33;270:1;265:20;;;;222:63;;265:20;274:9;222:63;;298:9;295:1;288:20;328:4;319:7;311:22;352:7;343;336:24",
+  "deployedSourceMap": "26:418:27:-;;;;;;;;",
   "source": "pragma solidity ^0.4.24;\n\nlibrary Attribute {\n  enum AttributeType {\n    ROLE_MANAGER,                   // 0\n    ROLE_OPERATOR,                  // 1\n    IS_BLACKLISTED,                 // 2\n    HAS_PASSED_KYC_AML,             // 3\n    NO_FEES,                        // 4\n    /* Additional user-defined later */\n    USER_DEFINED\n  }\n\n  function toUint256(AttributeType _type) internal pure returns (uint256) {\n    return uint256(_type);\n  }\n}\n",
-  "sourcePath": "/home/namtq/Trainning/git/SamIO/contracts/registry/Attribute.sol",
+  "sourcePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/Attribute.sol",
   "ast": {
-    "absolutePath": "/home/namtq/Trainning/git/SamIO/contracts/registry/Attribute.sol",
+    "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/Attribute.sol",
     "exportedSymbols": {
       "Attribute": [
-        4516
+        3214
       ]
     },
-    "id": 4517,
+    "id": 3215,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4496,
+        "id": 3194,
         "literals": [
           "solidity",
           "^",
@@ -26,7 +26,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:40"
+        "src": "0:24:27"
       },
       {
         "baseContracts": [],
@@ -34,63 +34,63 @@
         "contractKind": "library",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 4516,
+        "id": 3214,
         "linearizedBaseContracts": [
-          4516
+          3214
         ],
         "name": "Attribute",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "Attribute.AttributeType",
-            "id": 4503,
+            "id": 3201,
             "members": [
               {
-                "id": 4497,
+                "id": 3195,
                 "name": "ROLE_MANAGER",
                 "nodeType": "EnumValue",
-                "src": "73:12:40"
+                "src": "73:12:27"
               },
               {
-                "id": 4498,
+                "id": 3196,
                 "name": "ROLE_OPERATOR",
                 "nodeType": "EnumValue",
-                "src": "114:13:40"
+                "src": "114:13:27"
               },
               {
-                "id": 4499,
+                "id": 3197,
                 "name": "IS_BLACKLISTED",
                 "nodeType": "EnumValue",
-                "src": "155:14:40"
+                "src": "155:14:27"
               },
               {
-                "id": 4500,
+                "id": 3198,
                 "name": "HAS_PASSED_KYC_AML",
                 "nodeType": "EnumValue",
-                "src": "196:18:40"
+                "src": "196:18:27"
               },
               {
-                "id": 4501,
+                "id": 3199,
                 "name": "NO_FEES",
                 "nodeType": "EnumValue",
-                "src": "237:7:40"
+                "src": "237:7:27"
               },
               {
-                "id": 4502,
+                "id": 3200,
                 "name": "USER_DEFINED",
                 "nodeType": "EnumValue",
-                "src": "318:12:40"
+                "src": "318:12:27"
               }
             ],
             "name": "AttributeType",
             "nodeType": "EnumDefinition",
-            "src": "48:286:40"
+            "src": "48:286:27"
           },
           {
             "body": {
-              "id": 4514,
+              "id": 3212,
               "nodeType": "Block",
-              "src": "410:32:40",
+              "src": "410:32:27",
               "statements": [
                 {
                   "expression": {
@@ -98,14 +98,14 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 4511,
+                        "id": 3209,
                         "name": "_type",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4505,
-                        "src": "431:5:40",
+                        "referencedDeclaration": 3203,
+                        "src": "431:5:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_AttributeType_$4503",
+                          "typeIdentifier": "t_enum$_AttributeType_$3201",
                           "typeString": "enum Attribute.AttributeType"
                         }
                       }
@@ -113,24 +113,24 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_enum$_AttributeType_$4503",
+                          "typeIdentifier": "t_enum$_AttributeType_$3201",
                           "typeString": "enum Attribute.AttributeType"
                         }
                       ],
-                      "id": 4510,
+                      "id": 3208,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "423:7:40",
+                      "src": "423:7:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_uint256_$",
                         "typeString": "type(uint256)"
                       },
                       "typeName": "uint256"
                     },
-                    "id": 4512,
+                    "id": 3210,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -138,21 +138,21 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "423:14:40",
+                    "src": "423:14:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 4509,
-                  "id": 4513,
+                  "functionReturnParameters": 3207,
+                  "id": 3211,
                   "nodeType": "Return",
-                  "src": "416:21:40"
+                  "src": "416:21:27"
                 }
               ]
             },
             "documentation": null,
-            "id": 4515,
+            "id": 3213,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -160,31 +160,31 @@
             "name": "toUint256",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4506,
+              "id": 3204,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4505,
+                  "id": 3203,
                   "name": "_type",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4515,
-                  "src": "357:19:40",
+                  "scope": 3213,
+                  "src": "357:19:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_AttributeType_$4503",
+                    "typeIdentifier": "t_enum$_AttributeType_$3201",
                     "typeString": "enum Attribute.AttributeType"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 4504,
+                    "id": 3202,
                     "name": "AttributeType",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 4503,
-                    "src": "357:13:40",
+                    "referencedDeclaration": 3201,
+                    "src": "357:13:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_AttributeType_$4503",
+                      "typeIdentifier": "t_enum$_AttributeType_$3201",
                       "typeString": "enum Attribute.AttributeType"
                     }
                   },
@@ -192,20 +192,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "356:21:40"
+              "src": "356:21:27"
             },
             "payable": false,
             "returnParameters": {
-              "id": 4509,
+              "id": 3207,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4508,
+                  "id": 3206,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4515,
-                  "src": "401:7:40",
+                  "scope": 3213,
+                  "src": "401:7:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -213,10 +213,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4507,
+                    "id": 3205,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "401:7:40",
+                    "src": "401:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -226,33 +226,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "400:9:40"
+              "src": "400:9:27"
             },
-            "scope": 4516,
-            "src": "338:104:40",
+            "scope": 3214,
+            "src": "338:104:27",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 4517,
-        "src": "26:418:40"
+        "scope": 3215,
+        "src": "26:418:27"
       }
     ],
-    "src": "0:445:40"
+    "src": "0:445:27"
   },
   "legacyAST": {
-    "absolutePath": "/home/namtq/Trainning/git/SamIO/contracts/registry/Attribute.sol",
+    "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/Attribute.sol",
     "exportedSymbols": {
       "Attribute": [
-        4516
+        3214
       ]
     },
-    "id": 4517,
+    "id": 3215,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 4496,
+        "id": 3194,
         "literals": [
           "solidity",
           "^",
@@ -260,7 +260,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:40"
+        "src": "0:24:27"
       },
       {
         "baseContracts": [],
@@ -268,63 +268,63 @@
         "contractKind": "library",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 4516,
+        "id": 3214,
         "linearizedBaseContracts": [
-          4516
+          3214
         ],
         "name": "Attribute",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "canonicalName": "Attribute.AttributeType",
-            "id": 4503,
+            "id": 3201,
             "members": [
               {
-                "id": 4497,
+                "id": 3195,
                 "name": "ROLE_MANAGER",
                 "nodeType": "EnumValue",
-                "src": "73:12:40"
+                "src": "73:12:27"
               },
               {
-                "id": 4498,
+                "id": 3196,
                 "name": "ROLE_OPERATOR",
                 "nodeType": "EnumValue",
-                "src": "114:13:40"
+                "src": "114:13:27"
               },
               {
-                "id": 4499,
+                "id": 3197,
                 "name": "IS_BLACKLISTED",
                 "nodeType": "EnumValue",
-                "src": "155:14:40"
+                "src": "155:14:27"
               },
               {
-                "id": 4500,
+                "id": 3198,
                 "name": "HAS_PASSED_KYC_AML",
                 "nodeType": "EnumValue",
-                "src": "196:18:40"
+                "src": "196:18:27"
               },
               {
-                "id": 4501,
+                "id": 3199,
                 "name": "NO_FEES",
                 "nodeType": "EnumValue",
-                "src": "237:7:40"
+                "src": "237:7:27"
               },
               {
-                "id": 4502,
+                "id": 3200,
                 "name": "USER_DEFINED",
                 "nodeType": "EnumValue",
-                "src": "318:12:40"
+                "src": "318:12:27"
               }
             ],
             "name": "AttributeType",
             "nodeType": "EnumDefinition",
-            "src": "48:286:40"
+            "src": "48:286:27"
           },
           {
             "body": {
-              "id": 4514,
+              "id": 3212,
               "nodeType": "Block",
-              "src": "410:32:40",
+              "src": "410:32:27",
               "statements": [
                 {
                   "expression": {
@@ -332,14 +332,14 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 4511,
+                        "id": 3209,
                         "name": "_type",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 4505,
-                        "src": "431:5:40",
+                        "referencedDeclaration": 3203,
+                        "src": "431:5:27",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_enum$_AttributeType_$4503",
+                          "typeIdentifier": "t_enum$_AttributeType_$3201",
                           "typeString": "enum Attribute.AttributeType"
                         }
                       }
@@ -347,24 +347,24 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_enum$_AttributeType_$4503",
+                          "typeIdentifier": "t_enum$_AttributeType_$3201",
                           "typeString": "enum Attribute.AttributeType"
                         }
                       ],
-                      "id": 4510,
+                      "id": 3208,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
-                      "src": "423:7:40",
+                      "src": "423:7:27",
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_uint256_$",
                         "typeString": "type(uint256)"
                       },
                       "typeName": "uint256"
                     },
-                    "id": 4512,
+                    "id": 3210,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -372,21 +372,21 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "423:14:40",
+                    "src": "423:14:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 4509,
-                  "id": 4513,
+                  "functionReturnParameters": 3207,
+                  "id": 3211,
                   "nodeType": "Return",
-                  "src": "416:21:40"
+                  "src": "416:21:27"
                 }
               ]
             },
             "documentation": null,
-            "id": 4515,
+            "id": 3213,
             "implemented": true,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -394,31 +394,31 @@
             "name": "toUint256",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 4506,
+              "id": 3204,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4505,
+                  "id": 3203,
                   "name": "_type",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4515,
-                  "src": "357:19:40",
+                  "scope": 3213,
+                  "src": "357:19:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_AttributeType_$4503",
+                    "typeIdentifier": "t_enum$_AttributeType_$3201",
                     "typeString": "enum Attribute.AttributeType"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 4504,
+                    "id": 3202,
                     "name": "AttributeType",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 4503,
-                    "src": "357:13:40",
+                    "referencedDeclaration": 3201,
+                    "src": "357:13:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_AttributeType_$4503",
+                      "typeIdentifier": "t_enum$_AttributeType_$3201",
                       "typeString": "enum Attribute.AttributeType"
                     }
                   },
@@ -426,20 +426,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "356:21:40"
+              "src": "356:21:27"
             },
             "payable": false,
             "returnParameters": {
-              "id": 4509,
+              "id": 3207,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 4508,
+                  "id": 3206,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 4515,
-                  "src": "401:7:40",
+                  "scope": 3213,
+                  "src": "401:7:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -447,10 +447,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 4507,
+                    "id": 3205,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "401:7:40",
+                    "src": "401:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -460,20 +460,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "400:9:40"
+              "src": "400:9:27"
             },
-            "scope": 4516,
-            "src": "338:104:40",
+            "scope": 3214,
+            "src": "338:104:27",
             "stateMutability": "pure",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
-        "scope": 4517,
-        "src": "26:418:40"
+        "scope": 3215,
+        "src": "26:418:27"
       }
     ],
-    "src": "0:445:40"
+    "src": "0:445:27"
   },
   "compiler": {
     "name": "solc",
@@ -546,13 +546,37 @@
       "address": "0xa007b7d087830b2ea6d4a72576bcdf0162d6ff18",
       "transactionHash": "0x3c6166759fa56453d07f90436ccecddb815c5e0c1dc73c4b8c9a840e9708fc92"
     },
+    "1538990278848": {
+      "events": {},
+      "links": {},
+      "address": "0xac73b05cddc2cbe3d87269f47bc7fd3c9fb85799",
+      "transactionHash": "0xe9b5473e67c35bece3ecb60c24275cd59bc7f107a25561d43691aa299e9c5230"
+    },
+    "1539052458922": {
+      "events": {},
+      "links": {},
+      "address": "0xc614bffe0005329dd3cbd928eb4b8e260fe11e48",
+      "transactionHash": "0x62420f033f2d01d93ebf7b487cf5ff9f2b51937ac3e37d0e814b5c34053aeb2e"
+    },
+    "1539138481774": {
+      "events": {},
+      "links": {},
+      "address": "0x5cae9c0e60cb1fee27659314dd3d92797ce414b9",
+      "transactionHash": "0x3c6166759fa56453d07f90436ccecddb815c5e0c1dc73c4b8c9a840e9708fc92"
+    },
+    "1539222771577": {
+      "events": {},
+      "links": {},
+      "address": "0xa66ca3a6f21b2078beaf32235f603282efa96e4f",
+      "transactionHash": "0x3c6166759fa56453d07f90436ccecddb815c5e0c1dc73c4b8c9a840e9708fc92"
+    },
     "1539226813056": {
       "events": {},
       "links": {},
-      "address": "0x01bf041e1928d25cc57ece619096fee825ddcd3c",
-      "transactionHash": "0x836b4eb298b724d97f3efa3522d2855ae645bb57a2c7ffbf5437cac0a2c3487e"
+      "address": "0xf7da743801b396b3ae174c0a4ae90dd2014962c1",
+      "transactionHash": "0x3c6166759fa56453d07f90436ccecddb815c5e0c1dc73c4b8c9a840e9708fc92"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-10-11T03:08:13.217Z"
+  "updatedAt": "2018-10-11T03:00:31.910Z"
 }
