@@ -22,7 +22,6 @@ const MintableToken     = require("./base-token/MintableToken.js");
 const PausableToken     = require("./base-token/PausableToken.js");
 
 
-
 const PATToken = artifacts.require("./PATToken.sol");
 
 contract('PATToken', function (accounts) {

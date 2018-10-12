@@ -80,10 +80,10 @@ contract Crowdsale {
    * @dev low level token purchase ***DO NOT OVERRIDE***
    * @param _beneficiary Address performing the token purchase
    */
-  function buyTokens(address _beneficiary) public payable { //  msg.value is amont of ether send to crowdsale for buying PATToken
+  function buyTokens(address _beneficiary) public payable {
 
     uint256 weiAmount = msg.value;
-    _preValidatePurchase(_beneficiary, weiAmount); // check acount
+    _preValidatePurchase(_beneficiary, weiAmount);
 
     // calculate token amount to be created
     uint256 tokens = _getTokenAmount(weiAmount);
@@ -91,7 +91,7 @@ contract Crowdsale {
     // update state
     weiRaised = weiRaised.add(weiAmount);
 
-    _processPurchase(_beneficiary, tokens); // beneficiary will be added token from crowdsale
+    _processPurchase(_beneficiary, tokens);
     emit TokenPurchase(
       msg.sender,
       _beneficiary,
@@ -111,7 +111,7 @@ contract Crowdsale {
 
   /**
    * @dev Validation of an incoming purchase. Use require statements to revert state when conditions are not met. Use `super` in contracts that inherit from Crowdsale to extend their validations.
-   * Example from CappedCrowdsale.sol's _preValidatePurchase method:
+   * Example from CappedCrowdsale.sol's _preValidatePurchase method: 
    *   super._preValidatePurchase(_beneficiary, _weiAmount);
    *   require(weiRaised.add(_weiAmount) <= cap);
    * @param _beneficiary Address performing the token purchase

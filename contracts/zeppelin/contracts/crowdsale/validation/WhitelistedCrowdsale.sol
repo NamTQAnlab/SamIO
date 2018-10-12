@@ -1,7 +1,7 @@
 pragma solidity ^0.4.24;
 
 import "../Crowdsale.sol";
-import "../../../../access/Whitelist.sol";
+import "../../access/Whitelist.sol";
 
 
 /**
@@ -19,7 +19,7 @@ contract WhitelistedCrowdsale is Whitelist, Crowdsale {
     uint256 _weiAmount
   )
     internal
-    /* onlyIfWhitelisted(_beneficiary) */
+    onlyIfWhitelisted(_beneficiary)
   {
     super._preValidatePurchase(_beneficiary, _weiAmount);
   }

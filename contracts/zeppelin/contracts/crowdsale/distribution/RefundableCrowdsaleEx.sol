@@ -4,7 +4,7 @@ pragma solidity ^0.4.24;
 import "../../math/SafeMath.sol";
 import "./FinalizableCrowdsale.sol";
 import "../../payment/RefundEscrowEx.sol";
-import "../../token/ERC20/SafeERC20.sol";
+import "../CrowdsaleEx.sol";
 
 
 /**
@@ -12,10 +12,8 @@ import "../../token/ERC20/SafeERC20.sol";
  * @dev Extension of Crowdsale contract that adds a funding goal, and
  * the possibility of users getting a refund if goal is not met.
  */
-contract RefundableCrowdsaleEx is FinalizableCrowdsale {
+contract RefundableCrowdsaleEx is FinalizableCrowdsale, CrowdsaleEx {
   using SafeMath for uint256;
-  using SafeERC20 for ERC20;
-
 
   // minimum amount of funds to be raised in weis
   uint256 public goal;
@@ -23,15 +21,13 @@ contract RefundableCrowdsaleEx is FinalizableCrowdsale {
   // refund escrow used to hold funds while crowdsale is running
   RefundEscrowEx private escrow;
 
-
-
   /**
-   * @dev Constructor, creates RefundEscrow.
+   * @dev Constructor, creates RefundEscrowEx.
    * @param _goal Funding goal
    */
   constructor(uint256 _goal) public {
     require(_goal > 0);
-    escrow = new RefundEscrowEx(wallet);
+    escrow = new RefundEscrowEx(RAXTokenWallet);
     goal = _goal;
   }
 
@@ -42,7 +38,7 @@ contract RefundableCrowdsaleEx is FinalizableCrowdsale {
     require(isFinalized);
     require(!goalReached());
 
-    escrow.withdraw(msg.sender);
+    escrow.withdraw(msg.sender, RAXTokenWallet);
   }
 
   /**
@@ -50,7 +46,7 @@ contract RefundableCrowdsaleEx is FinalizableCrowdsale {
    * @return Whether funding goal was reached
    */
   function goalReached() public view returns (bool) {
-    return weiRaised >= goal;
+    return RAXRaised >= goal;
   }
 
   /**
@@ -70,7 +66,7 @@ contract RefundableCrowdsaleEx is FinalizableCrowdsale {
   /**
    * @dev Overrides Crowdsale fund forwarding, sending funds to escrow.
    */
-  function _forwardFundsToken(uint256 _tokenAmount, ERC20 token) internal {
-    escrow.deposit(msg.sender,_tokenAmount, token);
+  function _forwardFunds(uint256 _amount) internal {
+    escrow.deposit(msg.sender, _amount);
   }
 }

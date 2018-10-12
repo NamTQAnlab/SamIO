@@ -34,19 +34,19 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.4.24;\n\nimport \"./Registry.sol\";\nimport \"./Attribute.sol\";\n\n\n// Interface for logic governing write access to a Registry.\ncontract RegistryAccessManager {\n  // Called when _admin attempts to write _value for _who's _attribute.\n  // Returns true if the write is allowed to proceed.\n  function confirmWrite(\n    address _who,\n    Attribute.AttributeType _attribute,\n    address _admin\n  )\n    public returns (bool);\n}\n",
-  "sourcePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/RegistryAccessManager.sol",
+  "sourcePath": "/home/namtq/MyWorkSpace/SamIO/contracts/registry/RegistryAccessManager.sol",
   "ast": {
-    "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/RegistryAccessManager.sol",
+    "absolutePath": "/home/namtq/MyWorkSpace/SamIO/contracts/registry/RegistryAccessManager.sol",
     "exportedSymbols": {
       "RegistryAccessManager": [
-        3545
+        3013
       ]
     },
-    "id": 3546,
+    "id": 3014,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3531,
+        "id": 2999,
         "literals": [
           "solidity",
           "^",
@@ -54,27 +54,27 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:31"
+        "src": "0:24:25"
       },
       {
-        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/Registry.sol",
+        "absolutePath": "/home/namtq/MyWorkSpace/SamIO/contracts/registry/Registry.sol",
         "file": "./Registry.sol",
-        "id": 3532,
+        "id": 3000,
         "nodeType": "ImportDirective",
-        "scope": 3546,
-        "sourceUnit": 3530,
-        "src": "26:24:31",
+        "scope": 3014,
+        "sourceUnit": 2998,
+        "src": "26:24:25",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/Attribute.sol",
+        "absolutePath": "/home/namtq/MyWorkSpace/SamIO/contracts/registry/Attribute.sol",
         "file": "./Attribute.sol",
-        "id": 3533,
+        "id": 3001,
         "nodeType": "ImportDirective",
-        "scope": 3546,
-        "sourceUnit": 3215,
-        "src": "51:25:31",
+        "scope": 3014,
+        "sourceUnit": 2683,
+        "src": "51:25:25",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -84,9 +84,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 3545,
+        "id": 3013,
         "linearizedBaseContracts": [
-          3545
+          3013
         ],
         "name": "RegistryAccessManager",
         "nodeType": "ContractDefinition",
@@ -94,7 +94,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 3544,
+            "id": 3012,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -102,16 +102,16 @@
             "name": "confirmWrite",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3540,
+              "id": 3008,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3535,
+                  "id": 3003,
                   "name": "_who",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3544,
-                  "src": "328:12:31",
+                  "scope": 3012,
+                  "src": "328:12:25",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -119,10 +119,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3534,
+                    "id": 3002,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "328:7:31",
+                    "src": "328:7:25",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -133,26 +133,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 3537,
+                  "id": 3005,
                   "name": "_attribute",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3544,
-                  "src": "346:34:31",
+                  "scope": 3012,
+                  "src": "346:34:25",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_AttributeType_$3201",
+                    "typeIdentifier": "t_enum$_AttributeType_$2669",
                     "typeString": "enum Attribute.AttributeType"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 3536,
+                    "id": 3004,
                     "name": "Attribute.AttributeType",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3201,
-                    "src": "346:23:31",
+                    "referencedDeclaration": 2669,
+                    "src": "346:23:25",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_AttributeType_$3201",
+                      "typeIdentifier": "t_enum$_AttributeType_$2669",
                       "typeString": "enum Attribute.AttributeType"
                     }
                   },
@@ -161,11 +161,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3539,
+                  "id": 3007,
                   "name": "_admin",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3544,
-                  "src": "386:14:31",
+                  "scope": 3012,
+                  "src": "386:14:25",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -173,10 +173,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3538,
+                    "id": 3006,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "386:7:31",
+                    "src": "386:7:25",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -186,20 +186,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "322:82:31"
+              "src": "322:82:25"
             },
             "payable": false,
             "returnParameters": {
-              "id": 3543,
+              "id": 3011,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3542,
+                  "id": 3010,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3544,
-                  "src": "425:4:31",
+                  "scope": 3012,
+                  "src": "425:4:25",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -207,10 +207,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 3541,
+                    "id": 3009,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "425:4:31",
+                    "src": "425:4:25",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -220,33 +220,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "424:6:31"
+              "src": "424:6:25"
             },
-            "scope": 3545,
-            "src": "301:130:31",
+            "scope": 3013,
+            "src": "301:130:25",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 3546,
-        "src": "140:293:31"
+        "scope": 3014,
+        "src": "140:293:25"
       }
     ],
-    "src": "0:434:31"
+    "src": "0:434:25"
   },
   "legacyAST": {
-    "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/RegistryAccessManager.sol",
+    "absolutePath": "/home/namtq/MyWorkSpace/SamIO/contracts/registry/RegistryAccessManager.sol",
     "exportedSymbols": {
       "RegistryAccessManager": [
-        3545
+        3013
       ]
     },
-    "id": 3546,
+    "id": 3014,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 3531,
+        "id": 2999,
         "literals": [
           "solidity",
           "^",
@@ -254,27 +254,27 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:31"
+        "src": "0:24:25"
       },
       {
-        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/Registry.sol",
+        "absolutePath": "/home/namtq/MyWorkSpace/SamIO/contracts/registry/Registry.sol",
         "file": "./Registry.sol",
-        "id": 3532,
+        "id": 3000,
         "nodeType": "ImportDirective",
-        "scope": 3546,
-        "sourceUnit": 3530,
-        "src": "26:24:31",
+        "scope": 3014,
+        "sourceUnit": 2998,
+        "src": "26:24:25",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/home/namtq/Anlab/SamuraiX/contracts/registry/Attribute.sol",
+        "absolutePath": "/home/namtq/MyWorkSpace/SamIO/contracts/registry/Attribute.sol",
         "file": "./Attribute.sol",
-        "id": 3533,
+        "id": 3001,
         "nodeType": "ImportDirective",
-        "scope": 3546,
-        "sourceUnit": 3215,
-        "src": "51:25:31",
+        "scope": 3014,
+        "sourceUnit": 2683,
+        "src": "51:25:25",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -284,9 +284,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 3545,
+        "id": 3013,
         "linearizedBaseContracts": [
-          3545
+          3013
         ],
         "name": "RegistryAccessManager",
         "nodeType": "ContractDefinition",
@@ -294,7 +294,7 @@
           {
             "body": null,
             "documentation": null,
-            "id": 3544,
+            "id": 3012,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -302,16 +302,16 @@
             "name": "confirmWrite",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 3540,
+              "id": 3008,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3535,
+                  "id": 3003,
                   "name": "_who",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3544,
-                  "src": "328:12:31",
+                  "scope": 3012,
+                  "src": "328:12:25",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -319,10 +319,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3534,
+                    "id": 3002,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "328:7:31",
+                    "src": "328:7:25",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -333,26 +333,26 @@
                 },
                 {
                   "constant": false,
-                  "id": 3537,
+                  "id": 3005,
                   "name": "_attribute",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3544,
-                  "src": "346:34:31",
+                  "scope": 3012,
+                  "src": "346:34:25",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_enum$_AttributeType_$3201",
+                    "typeIdentifier": "t_enum$_AttributeType_$2669",
                     "typeString": "enum Attribute.AttributeType"
                   },
                   "typeName": {
                     "contractScope": null,
-                    "id": 3536,
+                    "id": 3004,
                     "name": "Attribute.AttributeType",
                     "nodeType": "UserDefinedTypeName",
-                    "referencedDeclaration": 3201,
-                    "src": "346:23:31",
+                    "referencedDeclaration": 2669,
+                    "src": "346:23:25",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_enum$_AttributeType_$3201",
+                      "typeIdentifier": "t_enum$_AttributeType_$2669",
                       "typeString": "enum Attribute.AttributeType"
                     }
                   },
@@ -361,11 +361,11 @@
                 },
                 {
                   "constant": false,
-                  "id": 3539,
+                  "id": 3007,
                   "name": "_admin",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3544,
-                  "src": "386:14:31",
+                  "scope": 3012,
+                  "src": "386:14:25",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -373,10 +373,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 3538,
+                    "id": 3006,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "386:7:31",
+                    "src": "386:7:25",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -386,20 +386,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "322:82:31"
+              "src": "322:82:25"
             },
             "payable": false,
             "returnParameters": {
-              "id": 3543,
+              "id": 3011,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 3542,
+                  "id": 3010,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 3544,
-                  "src": "425:4:31",
+                  "scope": 3012,
+                  "src": "425:4:25",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -407,10 +407,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 3541,
+                    "id": 3009,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "425:4:31",
+                    "src": "425:4:25",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -420,20 +420,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "424:6:31"
+              "src": "424:6:25"
             },
-            "scope": 3545,
-            "src": "301:130:31",
+            "scope": 3013,
+            "src": "301:130:25",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 3546,
-        "src": "140:293:31"
+        "scope": 3014,
+        "src": "140:293:25"
       }
     ],
-    "src": "0:434:31"
+    "src": "0:434:25"
   },
   "compiler": {
     "name": "solc",
@@ -441,5 +441,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-10-08T03:06:05.194Z"
+  "updatedAt": "2018-10-12T01:39:19.112Z"
 }

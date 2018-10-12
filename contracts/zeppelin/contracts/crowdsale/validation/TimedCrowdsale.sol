@@ -33,8 +33,8 @@ contract TimedCrowdsale is Crowdsale {
     require(_openingTime >= block.timestamp);
     require(_closingTime >= _openingTime);
 
-    openingTime =  block.timestamp;
-    closingTime =  block.timestamp + 7 days;
+    openingTime = _openingTime;
+    closingTime = _closingTime;
   }
 
   /**
