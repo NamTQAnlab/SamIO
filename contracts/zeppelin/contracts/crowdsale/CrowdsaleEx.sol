@@ -10,9 +10,9 @@ contract CrowdsaleEx is Crowdsale {
 
   constructor(ERC20 _RAXTokenWallet) public {
     require(_RAXTokenWallet != address(0));
-
     RAXTokenWallet  = _RAXTokenWallet;
   }
+
 
   function exchangeTokens(
     address _beneficiary
@@ -28,9 +28,9 @@ contract CrowdsaleEx is Crowdsale {
     // update state
     RAXRaised = RAXRaised.add(_amount);
 
-    RAXTokenWallet.transferFrom(msg.sender, RAXTokenWallet, _amount);
+    RAXTokenWallet.transferFrom(msg.sender, RAXTokenWallet, _amount); // transfer RAX token from purchaser to RAXTokenWallet
 
-    _processPurchase(_beneficiary, tokens);
+    _processPurchase(_beneficiary, tokens); // _beneficiary will receive token form crowdsale
 
     emit TokenPurchase(
       msg.sender,
@@ -41,7 +41,7 @@ contract CrowdsaleEx is Crowdsale {
 
     _updatePurchasingState(_beneficiary, _amount);
 
-    _forwardFunds(_amount);
+    _forwardFunds(_amount); // Determines how RAX is stored/forwarded on purchases
 
     _postValidatePurchase(_beneficiary, _amount);
   }
